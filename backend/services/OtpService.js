@@ -1,5 +1,5 @@
 const supabase = require("../config/supabaseClient");
-const sendEmail = require("../services/emailService");
+// const sendEmail = require("../services/emailService");
 const generateOtp = () => {
   return Math.floor(100000 + Math.random() * 900000);
 };
@@ -102,7 +102,7 @@ const sendOtp = async (Id) => {
 </body>
 </html>
 `;
-  sendEmail(email, "OTP for Verification", html);
+ // sendEmail(email, "OTP for Verification", html);
   return { data };
 };
 module.exports = sendOtp;

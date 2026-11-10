@@ -1,4 +1,4 @@
-// import Redis from "ioredis";
+/* // import Redis from "ioredis";
 const Redis = require("ioredis");
 if (!process.env.UPSTASH_REDIS_REST_URL) {
   throw new Error("❌ Missing UPSTASH_REDIS_REST_URL in environment variables");
@@ -35,4 +35,4 @@ const getCache = async (key) => {
 //   console.log("Cached value:", value);
 // })();
 
-module.exports = { redis, setCache, getCache };
+module.exports = { redis, setCache, getCache }; */

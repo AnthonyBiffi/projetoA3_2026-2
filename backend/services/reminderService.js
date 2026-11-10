@@ -1,4 +1,4 @@
-const sendEmail = require("./emailService"); 
+// const sendEmail = require("./emailService"); 
 const supabase = require("../config/supabaseClient"); 
 
 const sendReminder = async ()=>{
@@ -15,7 +15,7 @@ const sendReminder = async ()=>{
             return { error: patientError.message };
         }
         const email = patientData.email;
-        sendEmail(email, "Appointment Reminder", `Hello, Your appointment is scheduled for tomorrow. Please be on time.`);
+      //  sendEmail(email, "Appointment Reminder", `Hello, Your appointment is scheduled for tomorrow. Please be on time.`);
     }
     return {data: "Reminders sent successfully"};
 }

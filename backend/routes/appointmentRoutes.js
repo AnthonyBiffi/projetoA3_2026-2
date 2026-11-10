@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const supabase = require("../config/supabaseClient");
-const sendEmail = require("../services/emailService");
+// const sendEmail = require("../services/emailService");
 const { getIo } = require("../config/socket.js");
 const { calendar, event } = require("../services/meetScheduler");
 const {
@@ -235,7 +235,7 @@ router.post("/book", async (req, res) => {
 </html>
 `;
 
-  sendEmail(patientEmail, "Appointment Confirmed - CureIt", html);
+  //sendEmail(patientEmail, "Appointment Confirmed - CureIt", html);
   return res.status(201).json(data);
 });
 router.post("/updateStatus/:appointmentId", async (req, res) => {

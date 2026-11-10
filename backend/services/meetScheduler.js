@@ -1,4 +1,4 @@
-const {google} = require('googleapis')
+/* const {google} = require('googleapis')
 const oauth2client = require('../config/googleClient')
 const calendar = google.calendar({
     version: 'v3',
@@ -29,4 +29,4 @@ const event = {
     ]   
 };
 
-module.exports = {event , calendar}
+module.exports = {event , calendar} */
