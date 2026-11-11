@@ -43,7 +43,7 @@ const PatientHealthStatusForm = () => {
   });
 
   const [token, setToken] = useState(
-    localStorage.getItem("sb-vakmfwtcbdeaigysjgch-auth-token"),
+    localStorage.getItem("sb-qhxjxhiaadtlcgklvofq-auth-token"),
   );
   const data = JSON.parse(token);
 
@@ -112,8 +112,8 @@ const PatientHealthStatusForm = () => {
     setFormErrors(newErrors);
     return isValid;
   };
-  // Make sure your handleSubmit function also validates all steps
-  const handleSubmit = async (e) => {
+  // Make sure your handleEnviar function also validates all steps
+  const handleEnviar = async (e) => {
     e.preventDefault();
     const isValid = validateAllSteps(); // This updates formErrors state
 
@@ -387,8 +387,8 @@ const PatientHealthStatusForm = () => {
                     : step === 2
                       ? "Symptoms"
                       : step === 3
-                        ? "Vital Signs"
-                        : "Medical History"}
+                        ? "Sinais Vitais"
+                        : "Histórico Médico"}
                 </span>
               </div>
             ))}
@@ -403,15 +403,15 @@ const PatientHealthStatusForm = () => {
         </div>
 
         {/* Main Form */}
-        <form onSubmit={handleSubmit}>
+        <form onEnviar={handleEnviar}>
           <div className="overflow-hidden rounded-xl bg-white shadow-lg">
-            {/* Step 1: Personal Information */}
+            {/* Step 1: Informações Pessoais */}
             {activeStep === 1 && (
               <div className="animate-fade-in">
                 <div className="flex items-center border-b bg-gradient-to-r from-blue-50 to-blue-100 p-6">
                   <User className="mr-3 text-blue-600" />
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Personal Information
+                    Informações Pessoais
                   </h3>
                 </div>
 
@@ -503,9 +503,9 @@ const PatientHealthStatusForm = () => {
                         onChange={handleChange}
                         className={`mt-1 w-full rounded-md border ${formErrors.patientGender ? "border-red-500" : "border-gray-300"} px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500`}
                       >
-                        <option value="">Select Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="">Selecione o Gênero</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Feminino</option>
                         <option value="other">Other</option>
                       </select>
                       {formErrors.patientGender && (
@@ -740,13 +740,13 @@ const PatientHealthStatusForm = () => {
               </div>
             )}
 
-            {/* Step 3: Vital Signs */}
+            {/* Step 3: Sinais Vitais */}
             {activeStep === 3 && (
               <div className="animate-fade-in">
                 <div className="flex items-center border-b bg-gradient-to-r from-blue-50 to-blue-100 p-6">
                   <Plus className="mr-3 text-blue-600" />
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Vital Signs
+                    Sinais Vitais
                   </h3>
                 </div>
 
@@ -901,13 +901,13 @@ const PatientHealthStatusForm = () => {
               </div>
             )}
 
-            {/* Step 4: Medical History */}
+            {/* Step 4: Histórico Médico */}
             {activeStep === 4 && (
               <div className="animate-fade-in">
                 <div className="flex items-center border-b bg-gradient-to-r from-blue-50 to-blue-100 p-6">
                   <FileText className="mr-3 text-blue-600" />
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Medical History
+                    Histórico Médico
                   </h3>
                 </div>
 
@@ -997,7 +997,7 @@ const PatientHealthStatusForm = () => {
                     activeStep === 1 ? "invisible" : ""
                   }`}
                 >
-                  Previous
+                  Anterior
                 </button>
                 <div>
                   {activeStep < 4 ? (
@@ -1006,7 +1006,7 @@ const PatientHealthStatusForm = () => {
                       onClick={nextStep}
                       className="ml-3 rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
-                      Next
+                      Próximo
                     </button>
                   ) : (
                     <button
@@ -1018,7 +1018,7 @@ const PatientHealthStatusForm = () => {
                       }`}
                       disabled={Object.keys(formErrors).length > 0}
                     >
-                      Submit
+                      Enviar
                     </button>
                   )}
                 </div>

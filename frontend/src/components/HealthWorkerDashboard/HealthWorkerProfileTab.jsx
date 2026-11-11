@@ -12,7 +12,7 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 function HealthWorkerProfileTab() {
   const tokenString = localStorage.getItem(
-    "sb-vakmfwtcbdeaigysjgch-auth-token",
+    "sb-qhxjxhiaadtlcgklvofq-auth-token",
   );
 
   const token = JSON?.parse(tokenString);
@@ -47,7 +47,7 @@ function HealthWorkerProfileTab() {
   useEffect(() => {
     // // console.log("ggggg", token);
     if (!token) {
-      toast.error("Session Expired Please Login Again.");
+      toast.error("Sessão expirada. Faça login novamente.");
       navigate("/login", { state: { sessionExpiration: true } }); // Redirect to login page
     }
   }, [token]);
@@ -138,10 +138,10 @@ function HealthWorkerProfileTab() {
   //             {profile?.name}
   //           </div>
   //           <div>
-  //             <span className="font-semibold">Address:</span> {profile?.address}
+  //             <span className="font-semibold">Endereço:</span> {profile?.address}
   //           </div>
   //           <div>
-  //             <span className="font-semibold">Email:</span> {profile?.email}
+  //             <span className="font-semibold">E-mail:</span> {profile?.email}
   //           </div>
 
   //           <div className="mt-12 flex w-full justify-center gap-x-4"></div>
@@ -204,16 +204,16 @@ function HealthWorkerProfileTab() {
         </div>
         <div className="flex flex-col justify-center gap-3">
           <div>
-            <span className="font-semibold">Email:</span> {profile?.email}
+            <span className="font-semibold">E-mail:</span> {profile?.email}
           </div>
           <div>
-            <span className="font-semibold">Phone:</span> {profile?.phone}
+            <span className="font-semibold">Telefone:</span> {profile?.phone}
           </div>
           <div>
-            <span className="font-semibold">Address:</span> {profile?.address}
+            <span className="font-semibold">Endereço:</span> {profile?.address}
           </div>
           <div>
-            <span className="font-semibold">Age & Gender:</span> {profile?.age}{" "}
+            <span className="font-semibold">Idade e Gênero:</span> {profile?.age}{" "}
             {profile.gender}
           </div>
         </div>

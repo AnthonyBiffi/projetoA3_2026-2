@@ -21,7 +21,7 @@ function Dashboard() {
   // useEffect(() => {
   // if (token) {
   const tokenString = localStorage.getItem(
-    "sb-vakmfwtcbdeaigysjgch-auth-token",
+    "sb-qhxjxhiaadtlcgklvofq-auth-token",
   );
 
   const token = JSON?.parse(tokenString);

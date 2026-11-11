@@ -117,7 +117,7 @@
 //       audioRef.current
 //         .play()
 //         .then(() => {
-//           toast.success("Checked in Successfully");
+//           toast.success("Check-in realizado com sucesso");
 //           // only mark checked-in after sound starts
 //           setIsCheckedIn(true);
 //           // refetch();
@@ -303,14 +303,14 @@
 //               }
 //             >
 //               <Video size={16} className="mr-1" />
-//               <span>Join Meet</span>
+//               <span>Entrar na Reunião</span>
 //             </Button>
 //           ) : (
 //             <>
 //               {!checked_in_status ? (
 //                 <Button color="blue" onClick={() => setShowScanner(true)}>
 //                   <QrCode size={16} className="mr-1" />
-//                   <span>Check In</span>
+//                   <span>Fazer Check-in</span>
 //                 </Button>
 //               ) : (
 //                 <Button disabled={true} color="green">
@@ -335,7 +335,7 @@
 //             </button>
 
 //             <h3 className="mb-4 text-center text-lg font-medium">
-//               Scan QR Code to Check In
+//               Escanear QR Code para Check-in
 //             </h3>
 
 //             <QRScanner
@@ -633,14 +633,14 @@ function AppointmentCard({ data, refetch, index }) {
               }
             >
               <Video size={16} className="mr-1" />
-              <span>Join Meet</span>
+              <span>Entrar na Reunião</span>
             </Button>
           ) : (
             <>
               {!isCheckedIn ? (
                 <Button color="blue" onClick={() => setShowScanner(true)}>
                   <QrCode size={16} className="mr-1" />
-                  <span>Check In</span>
+                  <span>Fazer Check-in</span>
                 </Button>
               ) : (
                 <Button disabled={true} color="green">
@@ -665,7 +665,7 @@ function AppointmentCard({ data, refetch, index }) {
             </button>
 
             <h3 className="mb-4 text-center text-lg font-medium">
-              Scan QR Code to Check In
+              Escanear QR Code para Check-in
             </h3>
 
             <QRScanner

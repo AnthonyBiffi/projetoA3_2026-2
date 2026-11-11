@@ -18,11 +18,11 @@ function SkipAppointment({ skipAppointment }) {
 
           <Flex gap="3" mt="4" justify="end">
             <Dialog.Close>
-              <Button>No, Go Back</Button>
+              <Button>Não, Voltar</Button>
             </Dialog.Close>
             <Dialog.Close>
               <Button color="red" onClick={skipAppointment}>
-                Yes, Skip
+                Sim, Pular
               </Button>
             </Dialog.Close>
           </Flex>

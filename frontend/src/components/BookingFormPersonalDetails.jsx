@@ -35,14 +35,14 @@ function BookingFormPersonalDetails({ data }) {
     resetTranscript();
     SpeechRecognition.startListening({
       continuous: true,
-      language: "en-IN", // Supports both Hindi and English speakers in India
+      language: "pt-BR", // Supports both Hindi and English speakers in India
     });
-    toast.success("Listening for health issues...");
+    toast.success("Ouvindo problemas de saúde...");
   };
 
   const stopListening = () => {
     SpeechRecognition.stopListening();
-    toast.success("Speech recording stopped");
+    toast.success("Gravação de voz interrompida");
   };
 
   async function getAddress() {
@@ -55,7 +55,7 @@ function BookingFormPersonalDetails({ data }) {
       const lng = position.coords.longitude;
 
       const address = await getAddressFromCoords(lat, lng);
-      toast.success("Address fetched successfully");
+      toast.success("Endereço obtido com sucesso");
       setFormData({ ...formData, address });
       // console.log(address);
     } catch (error) {
@@ -67,13 +67,13 @@ function BookingFormPersonalDetails({ data }) {
   return (
     <div className="animate-fade">
       <div className="mb-4 flex select-none justify-center text-center font-noto text-base font-semibold md:text-lg">
-        Fill your personal details
+        Preencha seus dados pessoais
       </div>
       <div className="flex flex-col gap-y-4">
         <div className="flex flex-col gap-y-1 lg:w-1/2">
-          <span className="">Full Name</span>
+          <span className="">Nome Completo</span>
           <TextField.Root
-            placeholder="Full Name"
+            placeholder="Nome Completo"
             value={formData.fullName}
             onChange={(e) =>
               setFormData({ ...formData, fullName: e.target.value })
@@ -82,10 +82,10 @@ function BookingFormPersonalDetails({ data }) {
         </div>
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Address</span>
+          <span className="">Endereço</span>
           <div className="flex gap-x-2">
             <TextField.Root
-              placeholder="Address"
+              placeholder="Endereço"
               className="w-full"
               value={formData.address}
               onChange={(e) =>
@@ -93,7 +93,7 @@ function BookingFormPersonalDetails({ data }) {
               }
             >
               <TextField.Slot>
-                <Tooltip content="Get Address from your location">
+                <Tooltip content="Obter endereço da sua localização">
                   <Button
                     variant="soft"
                     color="gray"
@@ -126,14 +126,14 @@ function BookingFormPersonalDetails({ data }) {
               size="2"
               onClick={() => getAddress()}
             >
-              Get Address
+              Obter Endereço
             </Button>
           </div>
         </div>
 
         <div className="flex flex-col gap-y-1">
           <div className="flex items-center justify-between">
-            <span className="">Describe Health Issues</span>
+            <span className="">Descreva os Problemas de Saúde</span>
             {/* {browserSupportsSpeechRecognition && (
               <Button
                 variant=""
@@ -143,7 +143,7 @@ function BookingFormPersonalDetails({ data }) {
               >
                 {listening ? (
                   <>
-                    <span className="mr-1">Stop</span>
+                    <span className="mr-1">Parar</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -160,7 +160,7 @@ function BookingFormPersonalDetails({ data }) {
                   </>
                 ) : (
                   <>
-                    <span className="mr-1">Voice Input</span>
+                    <span className="mr-1">Entrada de Voz</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -183,7 +183,7 @@ function BookingFormPersonalDetails({ data }) {
           </div>
           <div className="relative">
             <TextArea
-              placeholder="Description"
+              placeholder="Descrição"
               data-lenis-prevent="true"
               resize="vertical"
               style={{
@@ -197,7 +197,7 @@ function BookingFormPersonalDetails({ data }) {
 
             {!browserSupportsSpeechRecognition && (
               <div className="mt-1 text-sm text-red-500">
-                Your browser doesn't support speech recognition.
+                Seu navegador não suporta reconhecimento de voz.
               </div>
             )}
 
@@ -207,7 +207,7 @@ function BookingFormPersonalDetails({ data }) {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
                 </div>
-                <span className="text-xs text-gray-600">Listening...</span>
+                <span className="text-xs text-gray-600">Ouvindo...</span>
               </div>
             )}
             <div className="flex justify-end mt-3">
@@ -220,7 +220,7 @@ function BookingFormPersonalDetails({ data }) {
                 >
                   {listening ? (
                     <>
-                      <span className="mr-1">Stop</span>
+                      <span className="mr-1">Parar</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -237,7 +237,7 @@ function BookingFormPersonalDetails({ data }) {
                     </>
                   ) : (
                     <>
-                      <span className="mr-1">Voice Input</span>
+                      <span className="mr-1">Entrada de Voz</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -263,9 +263,9 @@ function BookingFormPersonalDetails({ data }) {
 
         <div className="flex gap-x-5">
           <div className="flex w-16 flex-col gap-y-1">
-            <span className="">Age</span>
+            <span className="">Idade</span>
             <TextField.Root
-              placeholder="Age"
+              placeholder="Idade"
               value={formData.age}
               type="number"
               onChange={(e) =>
@@ -279,7 +279,7 @@ function BookingFormPersonalDetails({ data }) {
               <DropdownMenu.Trigger>
                 <Button variant="outline" color="gray">
                   {/* Gender */}
-                  {formData.gender ? formData.gender : "Gender"}
+                  {formData.gender ? (formData.gender === "Male" ? "Masculino" : formData.gender === "Female" ? "Feminino" : formData.gender) : "Gênero"}
                   <DropdownMenu.TriggerIcon />
                 </Button>
               </DropdownMenu.Trigger>

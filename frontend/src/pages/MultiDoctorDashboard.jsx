@@ -38,7 +38,7 @@ const NoAppointmentsView = () => (
 
 const MultiDoctorDashboard = () => {
   const [token, setToken] = useState(
-    localStorage.getItem("sb-vakmfwtcbdeaigysjgch-auth-token"),
+    localStorage.getItem("sb-qhxjxhiaadtlcgklvofq-auth-token"),
   );
   const data = JSON.parse(token);
 
@@ -504,7 +504,7 @@ const MultiDoctorDashboard = () => {
                   <div className="px-4 py-3">
                     {sortedPatients.length === 0 ? (
                       <div className="flex items-center justify-center py-6 text-center">
-                        <p className="text-gray-500">No patients in queue</p>
+                        <p className="text-gray-500">Nenhum paciente na fila</p>
                       </div>
                     ) : (
                       <ul className="divide-y divide-gray-100">

@@ -40,7 +40,7 @@
 // // // //         .then((responseData) => {
 // // // //           console.log("Backend response:", responseData);
 // // // //           onScanSuccess(responseData);
-// // // //           toast.success("Check In Successfuls");
+// // // //           toast.success("Check-in realizado com sucessos");
 // // // //         })
 // // // //         .catch((err) => {
 // // // //           console.error("Error validating QR code:", err);
@@ -64,7 +64,7 @@
 
 // // // //   return (
 // // // //     <div style={{ textAlign: "center", marginTop: "2rem" }}>
-// // // //       <h2>Scan QR Code</h2>
+// // // //       <h2>Escanear QR Code</h2>
 // // // //       <QrScanner
 // // // //         delay={300}
 // // // //         style={previewStyle}
@@ -136,7 +136,7 @@
 // //         .then((responseData) => {
 // //           console.log("Backend response:", responseData);
 // //           onScanSuccess(responseData);
-// //           toast.success("Check In Successful");
+// //           toast.success("Check-in realizado com sucesso");
 // //         })
 // //         .catch((err) => {
 // //           console.error("Error validating QR code:", err);
@@ -174,7 +174,7 @@
 
 // //   return (
 // //     <div style={{ textAlign: "center", marginTop: "2rem" }}>
-// //       <h2>Scan QR Code</h2>
+// //       <h2>Escanear QR Code</h2>
 // //       {!doneRef.current && (
 // //         <QrScanner
 // //           delay={300}
@@ -275,7 +275,7 @@
 //           console.log("Backend response:", responseData);
 //           doneRef.current = true; // Only mark as done on successful validation
 //           onScanSuccess(responseData);
-//           toast.success("Check In Successful");
+//           toast.success("Check-in realizado com sucesso");
 //         })
 //         .catch((err) => {
 //           console.error("Error validating QR code:", err);
@@ -316,7 +316,7 @@
 
 //   return (
 //     <div className="qr-scanner-container">
-//       <h3>Scan QR Code</h3>
+//       <h3>Escanear QR Code</h3>
 //       {!doneRef.current && (
 //         <QrScanner
 //           delay={300}
@@ -425,7 +425,7 @@ const QRScanner = forwardRef(({ appointmentId, onScanSuccess }, ref) => {
           console.log("Backend response:", responseData);
           doneRef.current = true; // Only mark as done on successful validation
           onScanSuccess(responseData);
-          toast.success("Check In Successful");
+          toast.success("Check-in realizado com sucesso");
           // refresh the page
           // window.location.reload();
         })
@@ -470,7 +470,7 @@ const QRScanner = forwardRef(({ appointmentId, onScanSuccess }, ref) => {
       className="qr-scanner-container"
       style={{ textAlign: "center", marginTop: "2rem" }}
     >
-      <h3>Scan QR Code</h3>
+      <h3>Escanear QR Code</h3>
       {!doneRef.current && (
         <QrScanner
           delay={1000}

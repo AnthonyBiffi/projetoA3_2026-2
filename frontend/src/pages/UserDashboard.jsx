@@ -35,7 +35,7 @@ const DashboardPage = () => {
 
   return (
     <div>
-      <h1>Welcome to your Dashboard!</h1>
+      <h1>Bem-vindo(a) ao seu Painel!</h1>
       {/* Render dashboard content */}
       {/* Use the Logout component here */}
       <Logout />

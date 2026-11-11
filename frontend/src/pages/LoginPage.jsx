@@ -23,13 +23,13 @@ function LoginPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const { mutate, onSuccess, onError } = useCheckLogin();
   const [token, setToken] = useState(
-    localStorage.getItem("sb-vakmfwtcbdeaigysjgch-auth-token"),
+    localStorage.getItem("sb-qhxjxhiaadtlcgklvofq-auth-token"),
   );
 
   useEffect(() => {
     if (token) {
-      toast.success("Login successful! Redirecting to dashboard....");
-      setSuccessMessage("Logging in....");
+      toast.success("Login realizado com sucesso! Redirecionando para o painel....");
+      setSuccessMessage("Entrando....");
       setTimeout(() => {
         window.location.href = "/cureit/user/dashboard";
       }, 500);
@@ -44,8 +44,8 @@ function LoginPage() {
       onSuccess: (data) => {
         // console.log("Login Success:", data);
         // if (data.user) {
-        toast.success("Login successful! Redirecting to dashboard....");
-        setSuccessMessage("Logging in....");
+        toast.success("Login realizado com sucesso! Redirecionando para o painel....");
+        setSuccessMessage("Entrando....");
         setTimeout(() => {
           window.location.href = "/cureit/user/dashboard";
         }, 500);
@@ -59,9 +59,9 @@ function LoginPage() {
       },
       onError: (error) => {
         console.error("Login Error:", error);
-        setErrorMessage("Wrong credentials. Please Try Again.");
-        window.alert("Wrong credentials. Please Try Again.");
-        toast.error("Wrong Credentials. Try again.");
+        setErrorMessage("Credenciais incorretas. Tente novamente.");
+        window.alert("Credenciais incorretas. Tente novamente.");
+        toast.error("Credenciais incorretas. Tente novamente.");
 
         // setErrorMessage("Wrong credentials. Please Try Again.");
       },
@@ -72,10 +72,10 @@ function LoginPage() {
     // // console.log("ggggg", token);
     // console.log("uuuuusssseeeefffeeecccctttt", location.state);
     if (location.state?.sessionExpired) {
-      toast.error("Session Expired. Please Login Again.");
+      toast.error("Sessão expirada. Faça login novamente.");
       navigate("./login", { replace: true }); // Reset state
     } else if (location.state?.loggedOut) {
-      toast.success("Signed Out Successfully");
+      toast.success("Desconectado com sucesso");
       navigate("./login", { replace: true }); // Reset state
     }
   }, [location]);
@@ -85,13 +85,13 @@ function LoginPage() {
       <div className="relative my-24 flex w-11/12 flex-col gap-y-4 rounded-md border-2 bg-white p-8 font-inter text-sm font-medium text-[#5d5d5d] shadow-2xl shadow-indigo-300 sm:w-8/12 md:w-6/12 lg:w-4/12">
         <div className="absolute left-3 top-3 -z-10 h-full w-full animate-fade-up rounded-md bg-gradient-to-r from-violet-300 to-indigo-400"></div>
         <div className="mb-2 flex select-none justify-center text-center font-noto text-base font-semibold md:text-lg">
-          Welcome back to CureIt.
+          Bem-vindo(a) de volta ao CureIt.
         </div>
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Email</span>
+          <span className="">E-mail</span>
           <TextField.Root
-            placeholder="Email"
+            placeholder="E-mail"
             onChange={(e) =>
               setLoginData({ ...loginData, email: e.target.value })
             }
@@ -100,10 +100,10 @@ function LoginPage() {
         </div>
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Password</span>
+          <span className="">Senha</span>
           <TextField.Root
             type={showPassword ? "text" : "password"}
-            placeholder="Password"
+            placeholder="Senha"
             onChange={(e) =>
               setLoginData({ ...loginData, password: e.target.value })
             }
@@ -129,7 +129,7 @@ function LoginPage() {
           </TextField.Root>
         </div>
         <Button color="iris" size="3" onClick={handleSignIn}>
-          Login
+          Entrar
         </Button>
 
         <div>{errorMessage}</div>
@@ -138,13 +138,13 @@ function LoginPage() {
           className="w-fit cursor-pointer select-none border-b border-white text-indigo-700 transition-all duration-200 hover:border-b hover:border-indigo-700"
           onClick={() => navigate("/signup")}
         >
-          Don't have an account? Sign Up
+          Não tem uma conta? Cadastre-se
         </p>
         <p
           className="w-fit cursor-pointer select-none border-b border-white text-indigo-700 transition-all duration-200 hover:border-b hover:border-indigo-700"
           onClick={() => navigate("/user/resetPassEnterEmail")}
         >
-          Forgot Password?
+          Esqueceu a senha?
         </p>
       </div>
     </div>

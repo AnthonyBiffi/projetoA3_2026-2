@@ -41,10 +41,10 @@ function OtpModal({ otpVerified, setOtpVerified , id }) {
     setIsTimerActive(true);
     const response = await sendOtp(id);
     if(response.status === 200) {
-     toast.success("OTP sent to the patient's email address!");
+     toast.success("Código enviado para o e-mail do paciente!");
     }
     else {
-      toast.error("Error sending OTP to the patient's email address!");
+      toast.error("Erro ao enviar código para o e-mail do paciente!");
     }
     setSendingOtp(false);
   }
@@ -59,16 +59,16 @@ function OtpModal({ otpVerified, setOtpVerified , id }) {
     {
       setOtpMatchStatus("verified");
       setOtpVerified(true);
-      setModalMessage("OTP Verified Successfully!"); // or "Wrong OTP entered!"
+      setModalMessage("Código verificado com sucesso!"); // or "Wrong OTP entered!"
       setVerifyingOtp(false);
-      toast.success("OTP Verified Successfully!");
+      toast.success("Código verificado com sucesso!");
     }
     else
     {
       setOtpMatchStatus("wrong");
       setModalMessage("Wrong OTP entered!");
       setVerifyingOtp(false);
-      toast.error("Wrong OTP entered");
+      toast.error("Código incorreto");
     }
     
   }
@@ -92,13 +92,13 @@ function OtpModal({ otpVerified, setOtpVerified , id }) {
             size={{ initial: "1", md: "2" }}
           >
             <div className="w-28">
-              {otpVerified ? "OTP Verified" : "OTP Verification"}
+              {otpVerified ? "OTP Verified" : "Verificação de Código"}
             </div>
           </Button>
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
-          <Dialog.Title>OTP Verification</Dialog.Title>
+          <Dialog.Title>Verificação de Código</Dialog.Title>
           <Dialog.Description size="2" mb="4">
             Enter the OTP sent to the patient's email address.
           </Dialog.Description>
@@ -111,7 +111,7 @@ function OtpModal({ otpVerified, setOtpVerified , id }) {
                 value={otp}
                 onChange={
                   otpVerified
-                    ? () => toast.success("OTP already verified!")
+                    ? () => toast.success("Código já verificado!")
                     : (otp) => setOtp(otp)
                 }
                 numInputs={6}
@@ -158,7 +158,7 @@ function OtpModal({ otpVerified, setOtpVerified , id }) {
             ) : (
               <Button
                 color="green"
-                onClick={() => toast.success("OTP already verified!")}
+                onClick={() => toast.success("Código já verificado!")}
               >
                 OTP Verified
               </Button>

@@ -232,7 +232,7 @@ export default function LabResultSummary() {
     <div className="flex flex-col min-h-screen bg-gray-50 mt-12">
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">Lab Results Dashboard</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Painel de Resultados de Exames</h1>
           <p className="text-gray-600">Patient ID: 12345 • Collected: Apr 10, 2025 • Reported: Apr 12, 2025</p>
         </div>
       </header>
@@ -242,7 +242,7 @@ export default function LabResultSummary() {
         <div className="bg-white rounded-lg shadow mb-6 p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Results Summary</h2>
+              <h2 className="text-xl font-semibold text-gray-900">Resumo dos Resultados</h2>
               <p className="text-lg font-medium text-gray-700">{getSeverityLabel()}</p>
             </div>
             <div className="flex space-x-6">
@@ -296,7 +296,7 @@ export default function LabResultSummary() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Chart */}
           <div className="lg:col-span-2 bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Visual Reference Chart</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Gráfico de Referência Visual</h2>
             <p className="text-sm text-gray-500 mb-4">
               This chart shows how each test result compares to its reference range. Bars extending to the right indicate higher values, while bars to the left indicate lower values.
             </p>
@@ -348,11 +348,11 @@ export default function LabResultSummary() {
 
           {/* Right Column - Tables */}
           <div className="space-y-6">
-            {/* Abnormal Results */}
+            {/* Resultados Anormais */}
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center mb-4">
                 <AlertCircle className="text-red-500 mr-2" size={20} />
-                <h2 className="text-xl font-semibold text-gray-900">Abnormal Results</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Resultados Anormais</h2>
               </div>
               {abnormalTests.length > 0 ? (
                 <div className="space-y-4">
@@ -378,15 +378,15 @@ export default function LabResultSummary() {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-600">No abnormal results in this category.</p>
+                <p className="text-gray-600">Nenhum resultado anormal nesta categoria.</p>
               )}
             </div>
 
-            {/* Normal Results Summary */}
+            {/* Normal Resumo dos Resultados */}
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center mb-4">
                 <CheckCircle className="text-green-500 mr-2" size={20} />
-                <h2 className="text-xl font-semibold text-gray-900">Normal Results</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Resultados Normais</h2>
               </div>
               <div className="space-y-2">
                 {normalTests.filter(test => activeCategory === 'all' || test.category === activeCategory)
@@ -403,7 +403,7 @@ export default function LabResultSummary() {
 
         {/* Table View of All Results */}
         <div className="mt-6 bg-white rounded-lg shadow overflow-hidden">
-          <h2 className="text-xl font-semibold text-gray-900 p-6 pb-3">Complete Results Table</h2>
+          <h2 className="text-xl font-semibold text-gray-900 p-6 pb-3">Tabela Completa de Resultados</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">

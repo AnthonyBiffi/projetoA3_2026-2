@@ -227,7 +227,7 @@ function HealthCampRegistrationForm() {
       {/* Form Title */}
       <div className="container mx-auto px-4 py-6">
         <h1 className="text-center font-noto text-2xl font-bold text-gray-800 md:text-3xl">
-          Health Camp Registration Form
+          Cadastro de Campanha de Saúde Form
         </h1>
         <p className="mt-2 text-center font-noto text-gray-600">
           Complete the form below to register your health camp with CureIt
@@ -345,7 +345,7 @@ function HealthCampRegistrationForm() {
             </div>
           </div>
 
-          {/* Contact Information */}
+          {/* Informações de Contato */}
           <div className="border-b border-gray-200 pb-6">
             <div className="mb-4 flex items-center">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white">
@@ -365,7 +365,7 @@ function HealthCampRegistrationForm() {
                 </svg>
               </div>
               <h2 className="ml-2 text-lg font-semibold text-blue-700">
-                Contact Information
+                Informações de Contato
               </h2>
             </div>
             <div className="grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-2">
@@ -538,7 +538,7 @@ function HealthCampRegistrationForm() {
             </div>
           </div>
 
-          {/* Location Details with Address Dropdown */}
+          {/* Detalhes da Localização with Address Dropdown */}
           <div className="border-b border-gray-200 pb-6">
             <div className="mb-4 flex items-center">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white">
@@ -603,7 +603,7 @@ function HealthCampRegistrationForm() {
 
                 {isLoadingSuggestions && (
                   <div className="absolute right-3 top-9">
-                    <span className="text-sm text-gray-500">Loading...</span>
+                    <span className="text-sm text-gray-500">Carregando...</span>
                   </div>
                 )}
               </div>
@@ -882,7 +882,7 @@ function HealthCampRegistrationForm() {
               type="submit"
               className="rounded-md bg-blue-600 px-8 py-3 font-medium text-white shadow-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Submit Registration
+              Enviar Cadastro
             </button>
           </div>
         </form>

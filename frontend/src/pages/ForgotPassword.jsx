@@ -17,7 +17,7 @@ function ResetPage() {
 
   useEffect(() => {
     const tokenString = localStorage.getItem(
-      "sb-vakmfwtcbdeaigysjgch-auth-token",
+      "sb-qhxjxhiaadtlcgklvofq-auth-token",
     );
     if (tokenString) {
       const token = JSON.parse(tokenString);
@@ -42,8 +42,8 @@ function ResetPage() {
     if (error) {
       setErrorMessage(error.message);
     } else {
-      setSuccessMessage("successful password update");
-      toast.success("Password Update Successfu.Redirecting to login.....");
+      setSuccessMessage("Senha atualizada com sucesso");
+      toast.success("Senha atualizada com sucesso! Redirecionando para login.....");
       setTimeout(() => {
         navigate("/login");
       }, 500);
@@ -126,14 +126,14 @@ function ResetPage() {
       <div className="relative my-6 flex w-11/12 flex-col gap-y-4 rounded-md border-2 bg-white p-8 font-inter text-sm font-medium text-[#5d5d5d] shadow-2xl shadow-indigo-300 sm:w-8/12 md:w-6/12 lg:w-4/12">
         <div className="absolute left-3 top-3 -z-10 h-full w-full animate-fade-up rounded-md bg-gradient-to-r from-violet-300 to-indigo-400"></div>
         <div className="mb-2 flex select-none justify-center text-center font-noto text-base font-semibold md:text-lg">
-          Welcome back to CureIt.
+          Bem-vindo(a) de volta ao CureIt.
         </div>
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Password</span>
+          <span className="">Senha</span>
           <TextField.Root
             type={showPassword ? "text" : "password"}
-            placeholder="Password"
+            placeholder="Senha"
             onBlur={handleBlur}
             name="password"
             onChange={handleChange}
@@ -160,16 +160,15 @@ function ResetPage() {
         </div>
         {validation.password === false && (
           <p className="mt-2 text-red-500">
-            Password must be at least 8 characters long, include an uppercase
-            letter, a lowercase letter, a number, and a special character.
+            A senha deve ter pelo menos 8 caracteres, incluir uma letra maiúscula, uma letra minúscula, um número e um caractere especial.
           </p>
         )}
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Confirm Password</span>
+          <span className="">Confirmar Senha</span>
           <TextField.Root
             type={showPassword2 ? "text" : "password"}
-            placeholder="Confirm Password"
+            placeholder="Confirmar Senha"
             name="confirmPassword"
             onBlur={handleBlur}
             onChange={handleChange}
@@ -196,7 +195,7 @@ function ResetPage() {
         </div>
         {validation.confirmPassword === false && (
           <p className="mt-2 text-red-500">
-            Oops! The passwords don’t match. Make sure both fields are the same.
+            Ops! As senhas não coincidem. Certifique-se de que ambos os campos sejam iguais.
           </p>
         )}
         <Button
@@ -205,7 +204,7 @@ function ResetPage() {
           onClick={handleResetPassword}
           disabled={!isFormValid}
         >
-          Confirm Reset Password
+          Confirmar Redefinição de Senha
         </Button>
 
         <div>{errorMessage}</div>
@@ -214,7 +213,7 @@ function ResetPage() {
           className="w-fit cursor-pointer select-none border-b border-white text-indigo-700 transition-all duration-200 hover:border-b hover:border-indigo-700"
           onClick={() => navigate("/signup")}
         >
-          Don't have an account? Sign Up
+          Não tem uma conta? Cadastre-se
         </p>
       </div>
     </div>

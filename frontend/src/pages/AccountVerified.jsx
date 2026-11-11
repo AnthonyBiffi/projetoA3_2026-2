@@ -11,26 +11,26 @@ function AccountVerified() {
           <div>
             <CheckCircledIcon width={20} height={20} />
           </div>
-          <p>Account verification successful</p>
+          <p>Verificação de conta realizada com sucesso</p>
         </div>
-        <div>Your account was verified successfully</div>
+        <div>Sua conta foi verificada com sucesso</div>
 
         <div className="flex flex-col items-center text-sm">
-          <div>Please proceed to login</div>
+          <div>Por favor, prossiga para entrar</div>
           <div className="my-1">
             <Button color="iris" onClick={() => navigate("/login")}>
-              Login
+              Entrar
             </Button>
           </div>
         </div>
 
         <div className="flex gap-x-1 text-sm">
-          <div>Need help?</div>
+          <div>Precisa de ajuda?</div>
           <div
             className="cursor-pointer text-indigo-800 underline"
-            onClick={() => console.log("Contact Us")}
+            onClick={() => console.log("Fale Conosco")}
           >
-            Contact Us
+            Fale Conosco
           </div>
         </div>
       </div>

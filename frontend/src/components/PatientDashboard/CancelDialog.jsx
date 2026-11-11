@@ -56,13 +56,13 @@ function CancelDialog({ data, refetch }) {
               }}
             >
               <DataList.Item>
-                <DataList.Label minWidth="88px">Doctor</DataList.Label>
+                <DataList.Label minWidth="88px">Médico</DataList.Label>
                 <DataList.Value>
                   <Code variant="ghost">{doctor}</Code>
                 </DataList.Value>
               </DataList.Item>
               <DataList.Item align="center">
-                <DataList.Label minWidth="88px">Specialization</DataList.Label>
+                <DataList.Label minWidth="88px">Especialização</DataList.Label>
                 <DataList.Value>
                   <Badge color="indigo" variant="soft" radius="small">
                     {specialization}
@@ -96,7 +96,7 @@ function CancelDialog({ data, refetch }) {
                 </DataList.Value>
               </DataList.Item>
               <DataList.Item>
-                <DataList.Label minWidth="88px">Queue Position</DataList.Label>
+                <DataList.Label minWidth="88px">Posição na Fila</DataList.Label>
                 <DataList.Value>
                   <Badge variant="" color={appointmentType}>
                     {queuePosition}
@@ -108,7 +108,7 @@ function CancelDialog({ data, refetch }) {
 
           <Flex gap="3" mt="4" justify="end">
             <Dialog.Close>
-              <Button>No, Go Back</Button>
+              <Button>Não, Voltar</Button>
             </Dialog.Close>
             <Dialog.Close>
               <Button color="red" onClick={handleCancel}>

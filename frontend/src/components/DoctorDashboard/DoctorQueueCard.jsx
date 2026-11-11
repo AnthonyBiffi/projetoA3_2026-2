@@ -59,10 +59,10 @@ function DoctorQueueCard({ data, refetch, index }) {
       },
       {
         onSuccess: () => {
-          toast.success("Appointment Skipped");
+          toast.success("Consulta pulada");
         },
         onError: () => {
-          toast.error("Error skipping appointment");
+          toast.error("Erro ao pular consulta");
         },
       },
     );

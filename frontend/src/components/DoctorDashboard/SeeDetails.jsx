@@ -101,7 +101,7 @@ function SeeDetails({ data, refetch, otpVerified }) {
   async function saveDetails() {
     // Save the doctorRemarks and doctorPrescription to the database
     // Refetch the data
-    toast.success("Details saved successfully");
+    toast.success("Detalhes salvos com sucesso");
   }
   const [saving, setSaving] = useState(false);
   const appointmentId = data.appointmentId;
@@ -123,10 +123,10 @@ function SeeDetails({ data, refetch, otpVerified }) {
         }),
       ]);
       setIsPaneOpen(false);
-      toast.success("Details saved successfully");
+      toast.success("Detalhes salvos com sucesso");
     } catch (error) {
-      // console.log("Error saving details", error);
-      toast.error("Error saving details");
+      // console.log("Erro ao salvar detalhes", error);
+      toast.error("Erro ao salvar detalhes");
     } finally {
       setSaving(false);
     }
@@ -195,7 +195,7 @@ function SeeDetails({ data, refetch, otpVerified }) {
           >
             <div className="flex w-full justify-between">
               <Text as="div" size="5" weight="bold">
-                Patient Details:
+                Detalhes do Paciente:
               </Text>
               <div className="flex flex-col">
                 <Text as="div" size="2" mb="1" weight="bold">
@@ -327,7 +327,7 @@ function SeeDetails({ data, refetch, otpVerified }) {
               />
               <label className="flex flex-col gap-3">
                 <Text as="div" size="2" mb="1" weight="bold">
-                  Medical Prescription:
+                  Receita Médica:
                 </Text>
               </label>
               <MDXEditor
@@ -338,7 +338,7 @@ function SeeDetails({ data, refetch, otpVerified }) {
                 }}
                 contentEditableClassName="prose max-w-none mb-4 h-full border-2 border-t-0"
                 markdown={""}
-                placeholder="Type Medical Prescription here..."
+                placeholder="Digite a receita médica aqui..."
                 plugins={[
                   toolbarPlugin({
                     toolbarClassName: "my-classname",

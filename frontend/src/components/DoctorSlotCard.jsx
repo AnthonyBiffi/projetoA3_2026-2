@@ -90,7 +90,7 @@ function capitalizeFirstLetter(val) {
 //                       </Badge>
 //                     </div>
 //                   ))}
-//               {!data?.tags && <Code variant="ghost">No tags available</Code>}
+//               {!data?.tags && <Code variant="ghost">Nenhuma tag disponível</Code>}
 //             </div>
 //           </DataList.Value>
 //         </DataList.Item>
@@ -115,14 +115,14 @@ function DoctorSlotCard({ data, formData, setFormData, mode}) {
     <div className="flex flex-col gap-4 rounded-md border-2 p-4 font-noto shadow-md">
       <DataList.Root size={{ initial: "1", md: "2" }}>
         <DataList.Item>
-          <DataList.Label>Name</DataList.Label>
+          <DataList.Label>Nome</DataList.Label>
           <DataList.Value>
             <Code variant="ghost">{data?.doctor_name}</Code>
           </DataList.Value>
         </DataList.Item>
 
         <DataList.Item>
-          <DataList.Label>Specialization</DataList.Label>
+          <DataList.Label>Especialização</DataList.Label>
           <DataList.Value>
             <Badge color="jade" variant="soft" radius="full">
               {data?.specialization}
@@ -138,7 +138,7 @@ function DoctorSlotCard({ data, formData, setFormData, mode}) {
         </DataList.Item>
 
         <DataList.Item>
-          <DataList.Label>Available Slots</DataList.Label>
+          <DataList.Label>Horários Disponíveis</DataList.Label>
           <DataList.Value>
             <div className="flex flex-col gap-2">
               {data?.available_slots.map((slot, index) => {
@@ -196,7 +196,7 @@ function DoctorSlotCard({ data, formData, setFormData, mode}) {
                   ))}
               </div>
             ) : (
-              <Code variant="ghost">No tags available</Code>
+              <Code variant="ghost">Nenhuma tag disponível</Code>
             )}
           </DataList.Value>
         </DataList.Item>

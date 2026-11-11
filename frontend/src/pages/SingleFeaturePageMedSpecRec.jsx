@@ -4,7 +4,7 @@ function SingleFeaturePageMedSpecRec() {
   return (
     <div className="my-16 flex h-svh w-full flex-col items-center">
       <div className="my-6 text-center font-noto text-xl font-semibold">
-        AI-Powered Doctor Recommendation
+        Recomendação de Médicos com IA
       </div>
       <div className="mb-6 w-9/12 text-center font-noto font-medium">
         Our ML-driven system analyzes symptoms and connects you with the best

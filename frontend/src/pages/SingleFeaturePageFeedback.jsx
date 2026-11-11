@@ -4,7 +4,7 @@ function SingleFeaturePageFeedback() {
   return (
     <div className="my-16 flex h-svh w-full flex-col items-center">
       <div className="my-6 text-center font-noto text-xl font-semibold">
-        AI-powered Feedback System
+        Sistema de Feedback com IA
       </div>
       <div className="mb-6 w-9/12 text-center font-noto font-medium">
         It analyzes patient reviews and generates insightful tags for doctors,

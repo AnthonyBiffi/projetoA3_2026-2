@@ -13,52 +13,52 @@ function ChatBot() {
 
   const [chatbotMessages2, setChatbotMessages2] = useState([
     {
-      message: "Hello, I am CureIt AI ChatBot. How can I help you today?",
+      message: "Olá, sou o ChatBot IA CureIt. Como posso ajudar você hoje?",
       type: "bot",
     },
     {
-      message: "How to book an appointment?",
+      message: "Como agendar uma consulta?",
       type: "user",
     },
     {
       message:
-        "To book an appointment, you can click on the 'Book Appointment' button on the top right corner of the page.",
+        "Para agendar uma consulta, clique no botão 'Agendar Consulta' no topo da página.",
       type: "bot",
     },
     {
-      message: "Thank you!",
+      message: "Obrigado!",
       type: "user",
     },
     {
-      message: "You're welcome!",
+      message: "De nada!",
       type: "bot",
     },
     {
-      message: "Is there anything else you would like to know?",
+      message: "Há mais alguma coisa que gostaria de saber?",
       type: "bot",
     },
     {
-      message: "Yes, I would like to know more about CureIt.",
+      message: "Sim, gostaria de saber mais sobre o CureIt.",
       type: "user",
     },
     {
       message:
-        "CureIt is an online platform that allows you to book appointments with doctors and healthcare professionals. You can also consult with doctors online.",
+        "O CureIt é uma plataforma online que permite agendar consultas com médicos e profissionais de saúde. Você também pode consultar médicos online.",
       type: "bot",
     },
     {
-      message: "That's great!",
+      message: "Que ótimo!",
       type: "user",
     },
     {
-      message: "I'm glad you think so!",
+      message: "Fico feliz que tenha gostado!",
       type: "bot",
     },
   ]);
   const [chatbotMessages, setChatbotMessages] = useState([
     {
       type: "bot",
-      message: "Hello, I'm CureIt AI ChatBot. How can I help you today?",
+      message: "Olá, sou o ChatBot IA CureIt. Como posso ajudar você hoje?",
     },
   ]);
 
@@ -139,7 +139,7 @@ function ChatBot() {
               <div className="flex h-12 w-full items-center gap-x-2 border-red-600 p-2">
                 <TextField.Root
                   className="w-full"
-                  placeholder="Talk with CureIt AI ChatBot..."
+                  placeholder="Converse com o ChatBot IA CureIt..."
                   value={message || ""}
                   onChange={(e) => setMessage(e.target.value)}
                   onKeyDown={(e) => {

@@ -58,17 +58,17 @@ function SeeDetails({ data, refetch , prescriptionData}) {
   const [isPaneOpen, setIsPaneOpen] = useState(false);
 
 const [doctoRemarks , setDoctorRemarks]=useState("");
-const [doctorPrescription , setDoctorPrescription]=useState("");
+const [doctorReceita , setDoctorReceita]=useState("");
 useEffect(() => {
   if (!prescriptionData || prescriptionData.length === 0) {
     setDoctorRemarks("No remarks provided");
-    setDoctorPrescription("No prescription provided"); 
+    setDoctorReceita("No prescription provided"); 
     return;
   }
 
   setDoctorRemarks(prescriptionData[0]?.doctor_notes || "No remarks provided");
 
-  // let markdown = "### Prescription Details\n\n";
+  // let markdown = "### Receita Details\n\n";
   // markdown += "| Medicine Name  | Dosage  | Frequency    | Duration  |\n";
   // markdown += "|---------------|--------|------------|----------|\n";
 
@@ -78,7 +78,7 @@ useEffect(() => {
   //   });
   // }
 
-  setDoctorPrescription(prescriptionData[0]?.medicines || "No prescription provided");
+  setDoctorReceita(prescriptionData[0]?.medicines || "No prescription provided");
 }, [prescriptionData]);
 //   const [doctorRemarks, setDoctorRemarks] = useState(`
 // ## Doctor's Remarks  
@@ -102,7 +102,7 @@ useEffect(() => {
 // - **Advice**: Reduce salt, daily walking, avoid alcohol.  
 
 // **Doctor**: Dr. Alice Smith  
-// **Specialization**: Internal Medicine  
+// **Especialização**: Internal Medicine  
 // `); // can either debounce or use a normal variable to store the doctorRemarks to avoid unnecessary re-renders
 
 // console.log("patient details: ", prescriptionData);
@@ -191,7 +191,7 @@ useEffect(() => {
 
               <label className="flex gap-3">
                 <Text as="div" size="2" mb="1" weight="bold">
-                  Appointment Date:
+                  Data da Consulta:
                 </Text>
                 <Code as="div" weight={"bold"} size="2" mb="1">
                   {appointment_date}
@@ -200,7 +200,7 @@ useEffect(() => {
 
               <label className="flex gap-3">
                 <Text as="div" size="2" mb="1" weight="bold">
-                  Appointment Time:
+                  Horário da Consulta:
                 </Text>
                 <Code as="div" weight={"bold"} size="2" mb="1">
                   {new Date(appointment_time).toLocaleTimeString([] , { hour: '2-digit', minute: '2-digit' })}
@@ -216,7 +216,7 @@ useEffect(() => {
                 readOnly={true}
                 contentEditableClassName="prose max-w-none h-full mb-4 border-2"
                 markdown={ doctoRemarks || "hello"}
-                placeholder="Nothing to show here..."
+                placeholder="Nada para exibir aqui..."
                 plugins={[
                   toolbarPlugin({
                     toolbarClassName: "my-classname",
@@ -235,14 +235,14 @@ useEffect(() => {
               />
               <label className="flex flex-col gap-3">
                 <Text as="div" size="2" mb="1" weight="bold">
-                  Medical Prescription:
+                  Medical Receita:
                 </Text>
               </label>
               <MDXEditor
                 readOnly={true}
                 contentEditableClassName="prose max-w-none mb-4 h-full border-2 "
-                markdown={ doctorPrescription || ""}
-                placeholder="Nothing to show here..."
+                markdown={ doctorReceita || ""}
+                placeholder="Nada para exibir aqui..."
                 plugins={[
                   toolbarPlugin({
                     toolbarClassName: "my-classname",
@@ -261,7 +261,7 @@ useEffect(() => {
               />
             </Flex>
             <div className="flex w-full gap-x-4 py-4">
-              <Button>Download Reports</Button>
+              <Button>Baixar Relatórios</Button>
             </div>
           </div>
         </div>

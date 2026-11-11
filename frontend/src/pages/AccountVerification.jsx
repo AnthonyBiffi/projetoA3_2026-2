@@ -64,24 +64,24 @@ function AccountVerification() {
       setTimer(90);
       setIsTimerActive(true);
       const data = await response.json();
-      setMessage(data.message || "Failed to resend email");
+      setMessage(data.message || "Falha ao reenviar e-mail");
     } catch (error) {
-      setMessage("Error sending email");
+      setMessage("Erro ao enviar e-mail");
     }
   };
   const tokenString = localStorage.getItem(
-    "sb-vakmfwtcbdeaigysjgch-auth-token",
+    "sb-qhxjxhiaadtlcgklvofq-auth-token",
   );
   const [token, setToken] = useState(() => {
     const tokenString = localStorage.getItem(
-      "sb-vakmfwtcbdeaigysjgch-auth-token",
+      "sb-qhxjxhiaadtlcgklvofq-auth-token",
     );
     return JSON.parse(tokenString);
   });
 
   const updateToken = () => {
     const tokenString = localStorage.getItem(
-      "sb-vakmfwtcbdeaigysjgch-auth-token",
+      "sb-qhxjxhiaadtlcgklvofq-auth-token",
     );
     setToken(JSON.parse(tokenString));
   };
@@ -104,7 +104,7 @@ function AccountVerification() {
     // console.log("in useeffect:", dataUser);
     if (dataUser?.user) {
       if (token?.user?.email === email) {
-        toast.success("Email verified proceed to LogIn");
+        toast.success("E-mail verificado! Prossiga para Entrar");
         setTimeout(() => {
           // navigate("/verification", { state: { email } });
           navigate("/verified");
@@ -117,36 +117,36 @@ function AccountVerification() {
     <div className="flex h-[100svh] w-full items-center justify-center bg-[#f7f8fa] font-noto font-medium">
       <div className="m-4 flex flex-col items-center justify-center gap-y-4 rounded-lg bg-white p-8 drop-shadow-lg">
         <div className="mb-4 rounded-sm border border-green-400 bg-green-200 px-3 py-1 text-center text-lg font-semibold text-green-900">
-          Please verify your email
+          Por favor, verifique seu e-mail
         </div>
-        <div>You're almost there! We sent an email to</div>
+        <div>Você está quase lá! Enviamos um e-mail para</div>
         <Code>{email}</Code>
         <div className="mt-4 text-sm">
-          Just click on the link in that email to complete your signup.
+          Basta clicar no link do e-mail para concluir seu cadastro.
           <br />
-          If you don't see it, you may need to check your spam folder.
+          Se não o encontrar, verifique sua caixa de spam.
         </div>
 
         <div className="flex flex-col items-center text-sm">
-          <div>Still can't find the email?</div>
+          <div>Ainda não encontrou o e-mail?</div>
           <div className="my-1">
             <Button
               color="iris"
               disabled={isTimerActive}
               onClick={handleResend}
             >
-              {isTimerActive ? `Resend email in ${timer}s` : `Resend email`}
+              {isTimerActive ? `Reenviar e-mail em ${timer}s` : `Reenviar e-mail`}
             </Button>
           </div>
         </div>
 
         <div className="flex gap-x-1 text-sm">
-          <div>Need help?</div>
+          <div>Precisa de ajuda?</div>
           <div
             className="cursor-pointer text-indigo-800 underline"
-            onClick={() => console.log("Contact Us")}
+            onClick={() => console.log("Fale Conosco")}
           >
-            Contact Us
+            Fale Conosco
           </div>
         </div>
       </div>

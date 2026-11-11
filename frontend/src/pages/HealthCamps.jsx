@@ -36,8 +36,8 @@ import HealthCampList from "../pages/HealthCampList"; // Make sure path matches 
 import { useCureitContext } from "../utils/ContextProvider";
 import axios from "axios";
 
-// Volunteer Confirmation Modal Component
-const VolunteerConfirmationModal = ({
+// Volunteer Confirmaration Modal Component
+const VolunteerConfirmarationModal = ({
   open,
   onOpenChange,
   campDetails,
@@ -94,7 +94,7 @@ const VolunteerConfirmationModal = ({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Content className="max-w-lg">
-        <Dialog.Title>Volunteer Confirmation</Dialog.Title>
+        <Dialog.Title>Volunteer Confirmaration</Dialog.Title>
         <Dialog.Description size="2" mb="4">
           Thank you for your interest in volunteering!
         </Dialog.Description>
@@ -239,11 +239,11 @@ const VolunteerConfirmationModal = ({
         <div className="mt-6 flex justify-end gap-3">
           <Dialog.Close>
             <Button variant="soft" color="gray">
-              Cancel
+              Cancelar
             </Button>
           </Dialog.Close>
           <Button onClick={handleSubmit} disabled={!allChecked || isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Confirm Participation"}
+            {isSubmitting ? "Submitting..." : "Confirmar Participation"}
           </Button>
         </div>
       </Dialog.Content>
@@ -309,9 +309,9 @@ function HealthCampsPage() {
         />
       )}
 
-      {/* Volunteer Confirmation Modal */}
+      {/* Volunteer Confirmaration Modal */}
       {selectedCamp && (
-        <VolunteerConfirmationModal
+        <VolunteerConfirmarationModal
           open={showVolunteerModal}
           onOpenChange={setShowVolunteerModal}
           campDetails={selectedCamp}

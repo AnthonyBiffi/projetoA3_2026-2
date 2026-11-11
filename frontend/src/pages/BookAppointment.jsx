@@ -147,7 +147,7 @@ function BookAppointment() {
         <div className="relative my-24 flex w-11/12 flex-col gap-y-4 rounded-md border-2 bg-white px-6 py-4 font-inter text-sm font-medium text-[#5d5d5d] shadow-2xl shadow-indigo-300 sm:w-10/12 sm:p-8 md:w-10/12 lg:w-8/12 xl:px-12">
           <div className="absolute left-3 top-3 -z-10 h-full w-full animate-fade-up rounded-md bg-gradient-to-r from-violet-300 to-indigo-400"></div>
           {(isLoadingDoctorType || isLoadingSlots) && (
-            <div>Loading doctor type...</div>
+            <div>Carregando tipo de médico...</div>
           )}
           {formState === 0 && <BookingProcessGuide />}
           {formState === 1 && (
@@ -176,14 +176,14 @@ function BookAppointment() {
           <div className="flex w-full justify-between">
             {formState > 0 && !bookingSuccessful ? (
               <Button color="iris" size="2" onClick={() => handlePrev()}>
-                <ArrowLeftIcon width={15} height={15} /> Go Back
+                <ArrowLeftIcon width={15} height={15} /> Voltar
               </Button>
             ) : (
               <div></div>
             )}
             {formState < 3 && canProceed() && (
               <Button color="iris" size="2" onClick={() => handleNext()}>
-                Next <ArrowRightIcon width={15} height={15} />
+                Próximo <ArrowRightIcon width={15} height={15} />
               </Button>
             )}
             {formState < 3 && !canProceed() && (
@@ -191,10 +191,10 @@ function BookAppointment() {
                 color="gray"
                 size="2"
                 onClick={() =>
-                  toast.warning("Please fill all the details to proceed.")
+                  toast.warning("Por favor, preencha todos os dados para continuar.")
                 }
               >
-                Next <ArrowRightIcon width={15} height={15} />
+                Próximo <ArrowRightIcon width={15} height={15} />
               </Button>
             )}
             {formState === 3 &&
@@ -206,7 +206,7 @@ function BookAppointment() {
                   size="2"
                   onClick={() => onBookAppointment()}
                 >
-                  Book Appointment <Spinner />
+                  Agendar Consulta <Spinner />
                 </Button>
               ) : (
                 <Button
@@ -214,7 +214,7 @@ function BookAppointment() {
                   size="2"
                   onClick={() => onBookAppointment()}
                 >
-                  Book Appointment
+                  Agendar Consulta
                 </Button>
               ))}
             {formState === 3 && bookingSuccessful && (
@@ -223,7 +223,7 @@ function BookAppointment() {
                 size="2"
                 onClick={() => navigate("/user/dashboard?tab=appointments")}
               >
-                Check out your appointments
+                Ver minhas consultas
               </Button>
             )}
           </div>

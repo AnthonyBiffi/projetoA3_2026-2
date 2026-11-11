@@ -47,13 +47,13 @@
 //           }}
 //         >
 //           <DataList.Item>
-//             <DataList.Label minWidth="88px">Doctor</DataList.Label>
+//             <DataList.Label minWidth="88px">Médico</DataList.Label>
 //             <DataList.Value>
 //               <Code variant="ghost">{doctor}</Code>
 //             </DataList.Value>
 //           </DataList.Item>
 //           <DataList.Item align="">
-//             <DataList.Label minWidth="88px">Specialization</DataList.Label>
+//             <DataList.Label minWidth="88px">Especialização</DataList.Label>
 //             <DataList.Value>
 //               <Badge color="indigo" variant="soft" radius="small">
 //                 {specialization}

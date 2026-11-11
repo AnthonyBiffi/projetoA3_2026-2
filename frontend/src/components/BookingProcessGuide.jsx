@@ -8,32 +8,28 @@ function BookingProcessGuide() {
         <img src={CureitLogoWhite} alt="" className="h-12 md:h-16 w-auto" />
       </div>
       <div className="mb-4 flex select-none justify-center text-center font-noto text-base font-semibold md:text-lg">
-        Welcome to CureIt Appointment Booking
+        Bem-vindo(a) ao Agendamento de Consultas CureIt
       </div>
 
       <div className="flex flex-col gap-y-4 font-noto">
         <p>
-          At CureIt, we make booking appointments simple, quick, and
-          hassle-free!
+          No CureIt, tornamos o agendamento de consultas simples, rápido e sem complicações!
         </p>
         <ol className="ml-4 flex list-inside list-decimal flex-col gap-y-1">
           <li>
-            <b>Fill Your Details</b> - Provide your basic information to help us
-            serve you better.
+            <b>Preencha Seus Dados</b> - Forneça suas informações básicas para nos ajudar a atendê-lo(a) melhor.
           </li>
           <li>
-            <b>Choose a Time Slot</b> - Select a convenient date and time from
-            the available options.
+            <b>Escolha um Horário</b> - Selecione uma data e horário convenientes entre as opções disponíveis.
           </li>
           <li>
-            <b>Review and Confirm</b> - Double-check your details and confirm
-            your booking.
+            <b>Revise e Confirme</b> - Confira seus dados e confirme seu agendamento.
           </li>
         </ol>
         <p className=" ">
-          Our goal is to ensure a smooth experience and minimize your wait time.
-          You're just a few steps away from booking your appointment. <br />{" "}
-          Click <b>Next</b> to get started and enter your personal details.
+          Nosso objetivo é garantir uma experiência tranquila e minimizar seu tempo de espera.
+          Você está a poucos passos de agendar sua consulta. <br />{" "}
+          Clique em <b>Próximo</b> para começar e inserir seus dados pessoais.
         </p>
       </div>
     </div>

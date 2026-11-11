@@ -39,7 +39,7 @@ function DoctorQueue() {
       setAvailabilityData(availability);
     }
     if (availabilityError) {
-      toast.error("Error fetching doctor availability data");
+      toast.error("Erro ao buscar disponibilidade do médico");
     }
   }, [availability, availabilityError]);
 
@@ -88,11 +88,11 @@ function DoctorQueue() {
 
   useEffect(() => {
     if (error) {
-      toast.error("Error fetching appointments");
+      toast.error("Erro ao buscar consultas");
     }
   }, [error]);
 
-  const handleNextDay = () => {
+  const handlePróximoDay = () => {
     const nextDay = new Date(selectedDate);
     nextDay.setDate(nextDay.getDate() + 1);
     setSelectedDate(nextDay);
@@ -131,7 +131,7 @@ function DoctorQueue() {
                 <button
                   onClick={handlePrevDay}
                   className="rounded-full p-2 transition-colors hover:bg-gray-100"
-                  aria-label="Previous day"
+                  aria-label="Anterior day"
                 >
                   <ChevronLeft className="h-5 w-5 text-gray-600" />
                 </button>
@@ -157,9 +157,9 @@ function DoctorQueue() {
                 </div>
 
                 <button
-                  onClick={handleNextDay}
+                  onClick={handlePróximoDay}
                   className="rounded-full p-2 transition-colors hover:bg-gray-100"
-                  aria-label="Next day"
+                  aria-label="Próximo day"
                 >
                   <ChevronRight className="h-5 w-5 text-gray-600" />
                 </button>

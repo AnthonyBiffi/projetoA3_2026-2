@@ -18,7 +18,7 @@ function DoctorHistory() {
     useGetHistoryForDoctor(doctorId);
 
   if (error) {
-    toast.error("Error fetching data");
+    toast.error("Erro ao buscar dados");
   }
 
   const [showLoader, setShowLoader] = useState(true);

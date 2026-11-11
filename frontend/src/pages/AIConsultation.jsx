@@ -349,7 +349,7 @@
 // //         </div>
 // //         <div className="flex items-center gap-4">
 // //           <div className="h-2 w-2 animate-pulse rounded-full bg-green-400"></div>
-// //           <span className="text-sm text-gray-300">System Online</span>
+// //           <span className="text-sm text-gray-300">Sistema Online</span>
 // //         </div>
 // //       </header>
 
@@ -426,7 +426,7 @@
 // //                     className="h-32 w-full resize-none rounded-lg border border-purple-700/30 bg-gray-800/30 p-4 text-white placeholder-gray-400 backdrop-blur-sm focus:border-purple-500 focus:outline-none focus:ring focus:ring-purple-500/20"
 // //                     value={prompt}
 // //                     onChange={(e) => setPrompt(e.target.value)}
-// //                     placeholder="Describe your symptoms or ask a health question..."
+// //                     placeholder="Descreva seus sintomas ou faça uma pergunta sobre sua saúde..."
 // //                   />
 // //                   <button
 // //                     className={`absolute bottom-3 right-3 rounded-full p-2.5 transition-all ${
@@ -457,11 +457,11 @@
 // //             {activeTab === "history" && (
 // //               <div className="flex-1 rounded-lg">
 // //                 <h2 className="mb-3 text-lg font-semibold text-white">
-// //                   Recent Consultations
+// //                   Consultas Recentes
 // //                 </h2>
 // //                 <div className="flex h-64 flex-col gap-2 overflow-y-auto rounded-lg bg-gray-800/20 p-4">
 // //                   <div className="flex items-center justify-center text-gray-400">
-// //                     <p>No recent consultations</p>
+// //                     <p>Nenhuma consulta recente</p>
 // //                   </div>
 // //                 </div>
 // //               </div>
@@ -845,7 +845,7 @@
 //         </div>
 //         <div className="flex items-center gap-4">
 //           <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
-//           <span className="text-sm text-gray-600">System Online</span>
+//           <span className="text-sm text-gray-600">Sistema Online</span>
 //         </div>
 //       </header>
 
@@ -922,7 +922,7 @@
 //                     className="h-32 w-full resize-none rounded-lg border border-gray-300 bg-white p-3 text-gray-700 placeholder-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-200"
 //                     value={prompt}
 //                     onChange={(e) => setPrompt(e.target.value)}
-//                     placeholder="Describe your symptoms or ask a health question..."
+//                     placeholder="Descreva seus sintomas ou faça uma pergunta sobre sua saúde..."
 //                   />
 //                   <button
 //                     className={`absolute bottom-3 right-3 rounded-full p-2 transition-all ${
@@ -953,11 +953,11 @@
 //             {activeTab === "history" && (
 //               <div className="flex-1 rounded-lg">
 //                 <h2 className="mb-3 text-lg font-semibold text-gray-800">
-//                   Recent Consultations
+//                   Consultas Recentes
 //                 </h2>
 //                 <div className="flex h-48 flex-col gap-2 overflow-y-auto rounded-lg border border-gray-200 bg-gray-50 p-4">
 //                   <div className="flex items-center justify-center text-gray-500">
-//                     <p>No recent consultations</p>
+//                     <p>Nenhuma consulta recente</p>
 //                   </div>
 //                 </div>
 //               </div>
@@ -1411,7 +1411,7 @@ export default function AIConsultation() {
           </div>
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
-            <span className="text-sm text-gray-600">System Online</span>
+            <span className="text-sm text-gray-600">Sistema Online</span>
           </div>
         </header>
 
@@ -1521,7 +1521,7 @@ export default function AIConsultation() {
                         className="h-40 w-full resize-none rounded-lg border border-gray-300 bg-white p-4 text-gray-700 placeholder-gray-400 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-200"
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
-                        placeholder="Describe your symptoms or ask a health question..."
+                        placeholder="Descreva seus sintomas ou faça uma pergunta sobre sua saúde..."
                       />
                       <button
                         className={`absolute bottom-4 right-4 rounded-full p-2 transition-all ${
@@ -1552,7 +1552,7 @@ export default function AIConsultation() {
                 {activeTab === "history" && (
                   <div className="flex-1">
                     <h2 className="mb-4 text-lg font-semibold text-gray-800">
-                      Recent Consultations
+                      Consultas Recentes
                     </h2>
                     <div className="flex flex-1 flex-col gap-3 overflow-y-auto rounded-lg border border-gray-200 bg-gray-50 p-4">
                       {[1, 2, 3].map((index) => (

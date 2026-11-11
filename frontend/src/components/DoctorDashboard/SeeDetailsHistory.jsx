@@ -61,13 +61,13 @@ function SeeDetailsHistory({ data, refetch, prescriptionData }) {
   const [doctorPrescription, setDoctorPrescription] = useState("");
   useEffect(() => {
     if (!prescriptionData || prescriptionData.length === 0) {
-      setDoctorRemarks("No remarks provided");
-      setDoctorPrescription("No prescription provided");
+      setDoctorRemarks("Nenhuma observação informada");
+      setDoctorPrescription("Nenhuma receita informada");
       return;
     }
 
     setDoctorRemarks(
-      prescriptionData[0]?.doctor_notes || "No remarks provided",
+      prescriptionData[0]?.doctor_notes || "Nenhuma observação informada",
     );
 
     // let markdown = "### Prescription Details\n\n";
@@ -81,7 +81,7 @@ function SeeDetailsHistory({ data, refetch, prescriptionData }) {
     // }
 
     setDoctorPrescription(
-      prescriptionData[0]?.medicines || "No prescription provided",
+      prescriptionData[0]?.medicines || "Nenhuma receita informada",
     );
   }, [prescriptionData]);
   // async function saveDetails() {
@@ -146,7 +146,7 @@ function SeeDetailsHistory({ data, refetch, prescriptionData }) {
             className="overflow-scroll bg-white p-8"
           >
             <Text as="div" size="5" weight="bold">
-              Patient Details:
+              Detalhes do Paciente:
             </Text>
             <div className="my-8 w-full border"></div>
 
@@ -218,7 +218,7 @@ function SeeDetailsHistory({ data, refetch, prescriptionData }) {
 
               <label className="flex flex-col gap-3">
                 <Text as="div" size="2" mb="1" weight="bold">
-                  Doctor Remarks:
+                  Observações do Médico:
                 </Text>
               </label>
               <MDXEditor
@@ -262,7 +262,7 @@ function SeeDetailsHistory({ data, refetch, prescriptionData }) {
               />
               <label className="flex flex-col gap-3">
                 <Text as="div" size="2" mb="1" weight="bold">
-                  Medical Prescription:
+                  Receita Médica:
                 </Text>
               </label>
               <MDXEditor

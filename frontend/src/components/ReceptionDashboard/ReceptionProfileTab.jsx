@@ -39,7 +39,7 @@ async function generateNewQRCode(userId) {
 
 function ReceptionProfileTab() {
   const tokenString = localStorage.getItem(
-    "sb-vakmfwtcbdeaigysjgch-auth-token",
+    "sb-qhxjxhiaadtlcgklvofq-auth-token",
   );
   const token = JSON?.parse(tokenString);
   const [userId, setUserId] = useState(token?.user?.id || null);
@@ -68,7 +68,7 @@ function ReceptionProfileTab() {
 
   useEffect(() => {
     if (!token) {
-      toast.error("Session Expired Please Login Again.");
+      toast.error("Sessão expirada. Faça login novamente.");
       navigate("/login", { state: { sessionExpiration: true } });
     }
   }, [token]);

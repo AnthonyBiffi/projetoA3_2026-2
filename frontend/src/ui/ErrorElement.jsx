@@ -3,7 +3,7 @@ import psyduck from "../assets/psyduck.png";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 
 export default function ErrorElement({
-  title = "Something Went wrong !",
+  title = "Algo deu errado!",
   text,
   type,
 }) {

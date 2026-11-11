@@ -35,7 +35,7 @@ function EditDoctorProfile({ profile, setProfile }) {
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
-          <Dialog.Title>Edit your profile details</Dialog.Title>
+          <Dialog.Title>Editar detalhes do perfil</Dialog.Title>
           <Dialog.Description size="2" mb="4">
             Make changes to your profile.
           </Dialog.Description>
@@ -47,7 +47,7 @@ function EditDoctorProfile({ profile, setProfile }) {
               </Text>
               <TextField.Root
                 value={name}
-                placeholder="Enter your full name"
+                placeholder="Digite seu nome completo"
                 onChange={(e) =>
                   setEditedProfile({ ...editedProfile, name: e.target.value })
                 }
@@ -59,7 +59,7 @@ function EditDoctorProfile({ profile, setProfile }) {
               </Text>
               <TextField.Root
                 value={email}
-                placeholder="Enter your email"
+                placeholder="Digite seu e-mail"
                 onChange={(e) =>
                   setEditedProfile({ ...editedProfile, email: e.target.value })
                 }
@@ -71,7 +71,7 @@ function EditDoctorProfile({ profile, setProfile }) {
               </Text>
               <TextField.Root
                 value={address}
-                placeholder="Enter your address"
+                placeholder="Digite seu endereço"
                 onChange={(e) =>
                   setEditedProfile({
                     ...editedProfile,
@@ -87,7 +87,7 @@ function EditDoctorProfile({ profile, setProfile }) {
                 </Text>
                 <TextField.Root
                   value={age}
-                  placeholder="Enter your address"
+                  placeholder="Digite seu endereço"
                   type="number"
                   onChange={(e) =>
                     setEditedProfile({
@@ -137,7 +137,7 @@ function EditDoctorProfile({ profile, setProfile }) {
               </Button>
             </Dialog.Close>
             <Dialog.Close>
-              <Button onClick={() => onSave()}>Save</Button>
+              <Button onClick={() => onSave()}>Salvar</Button>
             </Dialog.Close>
           </Flex>
         </Dialog.Content>

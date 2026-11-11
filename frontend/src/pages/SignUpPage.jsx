@@ -18,13 +18,13 @@ function SignUpPage() {
     emailVerified: "",
   });
   const [token, setToken] = useState(
-    localStorage.getItem("sb-vakmfwtcbdeaigysjgch-auth-token"),
+    localStorage.getItem("sb-qhxjxhiaadtlcgklvofq-auth-token"),
   );
 
   useEffect(() => {
     if (token) {
-      toast.success("Login successful! Redirecting to dashboard....");
-      setSuccessMessage("Logging in....");
+      toast.success("Login realizado com sucesso! Redirecionando para o painel....");
+      setSuccessMessage("Entrando....");
       setTimeout(() => {
         window.location.href = "/cureit/user/dashboard";
       }, 500);
@@ -76,17 +76,17 @@ function SignUpPage() {
               // console.log("User info successfully sent to backend:");
               setErrorMessage("");
               setSuccessMessage(
-                "Sign-up successful! Please check your email to verify your account.",
+                "Cadastro realizado com sucesso! Verifique seu e-mail para confirmar sua conta.",
               );
-              toast.success("Verification Email sent");
+              toast.success("Cadastro realizado com sucesso!");
               setTimeout(() => {
-                navigate("/verification", { state: { email } });
+                navigate("/login"); // Ou envie direto para "/cureit/user/dashboard"
               }, 500);
             },
             onError: (error) => {
               console.log(error);
-              setErrorMessage("Email already exists");
-              toast.error("Email aready exists.");
+              setErrorMessage("E-mail já cadastrado");
+              toast.error("E-mail já cadastrado.");
             },
           });
         };
@@ -110,17 +110,18 @@ function SignUpPage() {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       isValid = emailRegex.test(value);
     } else if (name === "phoneNumber") {
-      const phoneRegex = /^[6-9]\d{9}$/;
+      // Aceita telefones brasileiros com 10 ou 11 dígitos (Ex: 11987654321)
+      const phoneRegex = /^\d{10,11}$/;
       isValid = phoneRegex.test(value);
     } else if (name === "aadhaarNumber") {
-      const aadhaarRegex = /^\d{12}$/;
-      isValid = aadhaarRegex.test(value);
+      // Aceita o CPF brasileiro com exatamente 11 dígitos (apenas números)
+      const cpfRegex = /^\d{11}$/;
+      isValid = cpfRegex.test(value);
     } else if (name === "password") {
       const passwordRegex =
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
       isValid = passwordRegex.test(value);
     } else if (name === "name") {
-      // isValid = true;
       return;
     }
     setValidation((prev) => ({ ...prev, [name]: isValid }));
@@ -162,12 +163,12 @@ function SignUpPage() {
       <div className="relative my-24 flex w-11/12 flex-col gap-y-4 rounded-md border-2 bg-white p-8 font-inter text-sm font-medium text-[#5d5d5d] shadow-2xl shadow-indigo-300 sm:w-8/12 md:w-6/12 lg:w-4/12">
         <div className="absolute left-3 top-3 -z-10 h-full w-full animate-fade-up rounded-md bg-gradient-to-r from-violet-300 to-indigo-400"></div>
         <div className="mb-2 flex select-none text-center font-noto text-base font-semibold md:text-lg">
-          Your first appointment is just a sign-up away.
+          Sua primeira consulta está a apenas um cadastro de distância.
         </div>
         <div className="flex flex-col gap-y-1">
-          <span className="">Your Name</span>
+          <span className="">Seu Nome</span>
           <TextField.Root
-            placeholder="Name"
+            placeholder="Nome Completo"
             onChange={handleChange}
             name="name"
             value={signupData.name}
@@ -175,9 +176,9 @@ function SignUpPage() {
         </div>
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Email</span>
+          <span className="">E-mail</span>
           <TextField.Root
-            placeholder="Email"
+            placeholder="E-mail"
             onChange={handleChange}
             name="email"
             value={signupData.email}
@@ -186,7 +187,7 @@ function SignUpPage() {
         </div>
         {/* <div> */}
         {validation.email === false && (
-          <p className="mt-2 text-red-500">Invalid email format</p>
+          <p className="mt-2 text-red-500">Formato de e-mail inválido</p>
         )}
         {/* {validation.email === true && (
             <p className="mt-2 text-green-500">Valid email format</p>
@@ -194,9 +195,9 @@ function SignUpPage() {
         {/* </div> */}
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Aadhaar No.</span>
+          <span className="">Número do CPF</span>
           <TextField.Root
-            placeholder="Aadhaar Number"
+            placeholder="Número do CPF"
             onChange={handleChange}
             name="aadhaarNumber"
             value={signupData.aadhaarNumber}
@@ -205,7 +206,7 @@ function SignUpPage() {
         </div>
         {/* <div> */}
         {validation.aadhaarNumber === false && (
-          <p className="mt-2 text-red-500">Invalid aadhaar format</p>
+          <p className="mt-2 text-red-500">Formato de documento inválido</p>
         )}
         {/* {validation.aadhaar === true && (
             <p className="mt-2 text-green-500">Valid aadhaar format</p>
@@ -213,9 +214,9 @@ function SignUpPage() {
         {/* </div> */}
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Phone No.</span>
+          <span className="">Telefone</span>
           <TextField.Root
-            placeholder="Phone Number"
+            placeholder="Número de Telefone"
             onChange={handleChange}
             onBlur={handleBlur}
             name="phoneNumber"
@@ -224,7 +225,7 @@ function SignUpPage() {
         </div>
         {/* <div> */}
         {validation.phoneNumber === false && (
-          <p className="mt-2 text-red-500">Invalid Phone Number Format</p>
+          <p className="mt-2 text-red-500">Formato de telefone inválido</p>
         )}
         {/* {validation.phone === true && (
             <p className="mt-2 text-green-500">Valid Phone Number Format</p>
@@ -232,10 +233,10 @@ function SignUpPage() {
         {/* </div> */}
 
         <div className="flex flex-col gap-y-1">
-          <span className="">Password</span>
+          <span className="">Senha</span>
           <TextField.Root
             type={showPassword ? "text" : "password"}
-            placeholder="Password"
+            placeholder="Senha"
             onChange={handleChange}
             value={signupData.password}
             name="password"
@@ -261,8 +262,7 @@ function SignUpPage() {
         </div>
         {validation.password === false && (
           <p className="text-red-500">
-            Password must be at least 8 characters long, include an uppercase
-            letter, a lowercase letter, a number, and a special character.
+            A senha deve ter pelo menos 8 caracteres, incluir uma letra maiúscula, uma letra minúscula, um número e um caractere especial.
           </p>
         )}
         <Button
@@ -280,7 +280,7 @@ function SignUpPage() {
           className="w-fit cursor-pointer select-none border-b border-white text-indigo-700 transition-all duration-200 hover:border-b hover:border-indigo-700"
           onClick={() => navigate("/login")}
         >
-          Already have an account? Log In
+          Já tem uma conta? Entrar
         </p>
       </div>
     </div>

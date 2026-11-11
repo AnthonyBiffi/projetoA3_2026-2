@@ -26,7 +26,7 @@ function BookingFormSelectSlots({
   return (
     <div className="w-full animate-fade">
       <div className="mb-4 flex select-none justify-center text-center font-noto text-lg font-semibold md:text-xl">
-        Select a Doctor and Time Slot
+        Selecione um Médico e Horário
       </div>
 
       {/* Date Selection & Refresh */}
@@ -51,11 +51,11 @@ function BookingFormSelectSlots({
             });
           }}
         />
-        <Button onClick={() => refetchSlots()}>Refresh Slots</Button>
+        <Button onClick={() => refetchSlots()}>Atualizar Horários</Button>
       </div>
       <div className="mb-4 flex items-center gap-x-2">
         <div className="flex font-noto text-xs font-semibold">
-          Recommended Doctor Type:
+          Tipo de Médico Recomendado:
         </div>
         <Badge color="jade" variant="soft" radius="full">
           {dataDoctorType}
@@ -76,7 +76,7 @@ function BookingFormSelectSlots({
               setFormData({ ...formData, selectedDoctor: null });
             }}
           >
-            Online Consultation
+            Consulta Online
           </button>
           <button
             className={`flex-1 rounded-lg py-2 text-center text-sm font-medium transition-all ${
@@ -89,7 +89,7 @@ function BookingFormSelectSlots({
               setFormData({ ...formData, selectedDoctor: null });
             }}
           >
-            Offline Visit
+            Consulta Presencial
           </button>
         </div>
       </div>
@@ -105,7 +105,7 @@ function BookingFormSelectSlots({
         ))}
         {doctors.length === 0 && (
           <div className="my-12 text-center text-gray-500">
-            No doctors available for this date!
+            Nenhum médico disponível para esta data!
           </div>
         )}
       </div>

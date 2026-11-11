@@ -16,7 +16,7 @@ function UpcomingAppointments() {
     useGetUpcomingAppointments(patientId);
 
   if (error) {
-    toast.error("Error fetching data");
+    toast.error("Erro ao buscar dados");
   }
 
   return (
@@ -27,7 +27,7 @@ function UpcomingAppointments() {
           <AppointmentCard key={ix} data={appointment} index={ix} refetch={refetch} />
         ))}
         {data?.length === 0 && (
-          <div className="text-center">No upcoming appointments!</div>
+          <div className="text-center">Nenhuma consulta agendada!</div>
         )}
       </div>
     </div>

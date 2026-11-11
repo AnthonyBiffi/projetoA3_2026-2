@@ -37,16 +37,16 @@ function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const roleMenuItems = {
     doctor: [
-      { label: "Dashboard", path: "/user/dashboard" },
-      { label: "Queue", path: "/user/dashboard?tab=queue" },
-      { label: "History", path: "/user/dashboard?tab=history" },
+      { label: "Painel", path: "/user/dashboard" },
+      { label: "Fila", path: "/user/dashboard?tab=queue" },
+      { label: "Histórico", path: "/user/dashboard?tab=history" },
     ],
     patient: [
-      { label: "Dashboard", path: "/user/dashboard" },
-      { label: "Appointments", path: "/user/dashboard?tab=appointments" },
-      { label: "History", path: "/user/dashboard?tab=history" },
+      { label: "Painel", path: "/user/dashboard" },
+      { label: "Consultas", path: "/user/dashboard?tab=appointments" },
+      { label: "Histórico", path: "/user/dashboard?tab=history" },
     ],
-    reception: [{ label: "Dashboard", path: "/user/dashboard" }],
+    reception: [{ label: "Painel", path: "/user/dashboard" }],
     // Add more roles here if necessary
   };
 
@@ -84,7 +84,7 @@ function Header() {
 
   useEffect(() => {
     const tokenStringTemp = localStorage.getItem(
-      "sb-vakmfwtcbdeaigysjgch-auth-token",
+      "sb-qhxjxhiaadtlcgklvofq-auth-token",
     );
     setTokenString(tokenStringTemp);
     const token = JSON.parse(tokenStringTemp);
@@ -142,7 +142,7 @@ function Header() {
 
       <div className="mx-3 my-auto flex items-center justify-center gap-x-5">
         <div className="flex gap-x-2">
-          {profile?.role === 'PATIENT' && <Tooltip content="AI Consultation" side="bottom">
+          {profile?.role === 'PATIENT' && <Tooltip content="Consulta com IA" side="bottom">
             <Button
               size={"1"}
               color="iris"
@@ -150,7 +150,7 @@ function Header() {
               onClick={() => navigate("/AIConsultation")}
             >
               <div className="hidden items-center justify-center gap-x-2 font-noto text-sm font-semibold md:flex">
-                AI Consultation
+                Consulta com IA
               </div>
               <div className="flex items-center justify-center gap-x-2 font-noto text-sm font-semibold md:hidden">
                 <Brain size={15} />
@@ -160,7 +160,7 @@ function Header() {
           {/* <Separator orientation="vertical" /> */}
 
           <div className="flex w-fit items-center gap-x-3">
-            <Tooltip content="Home" side="bottom">
+            <Tooltip content="Início" side="bottom">
               <Button
                 onClick={() => navigate("/")}
                 color="iris"
@@ -169,7 +169,7 @@ function Header() {
               >
                 {/* <HomeIcon /> */}
                 <div className="hidden items-center justify-center gap-x-2 font-noto text-sm font-semibold md:flex">
-                  Home
+                  Início
                 </div>
                 <div className="flex items-center justify-center gap-x-2 font-noto text-sm font-semibold md:hidden">
                   <Home size={15} />
@@ -197,7 +197,7 @@ function Header() {
           >
             <div className="items-center justify-center gap-x-2 font-noto text-sm font-semibold flex">
 
-            Login
+            Entrar
             </div>
           </Button>
         ) : (
@@ -231,7 +231,7 @@ function Header() {
               <DropdownMenu.Separator />
               <DropdownMenu.Item color="red" onClick={handleLogout}>
                 <div className="flex w-full items-center justify-between gap-x-3">
-                  Sign Out <ExitIcon />
+                  Sair <ExitIcon />
                 </div>
               </DropdownMenu.Item>
             </DropdownMenu.Content>

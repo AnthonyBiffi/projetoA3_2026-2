@@ -13,10 +13,10 @@ function BookingFormReviewData({
       <div className="mb-4 flex select-none justify-center text-center font-noto text-base font-semibold md:text-lg">
         {bookingSuccessful ? (
           <p className="rounded-sm border border-green-400 bg-green-200 p-2 py-1 text-green-800">
-            Appointment booked successfully!
+            Consulta agendada com sucesso!
           </p>
         ) : (
-          <p className="p-2 py-1">Review your booking details</p>
+          <p className="p-2 py-1">Revise os detalhes do agendamento</p>
         )}
       </div>
       <div className="flex flex-col justify-between gap-y-10 rounded-md border-2 px-4 py-2 font-noto">
@@ -29,7 +29,7 @@ function BookingFormReviewData({
           }}
         >
           <DataList.Item>
-            <DataList.Label minWidth="88px">Patient Name</DataList.Label>
+            <DataList.Label minWidth="88px">Nome do Paciente</DataList.Label>
             <DataList.Value>
               <Flex align="center" gap="2">
                 <Code variant="ghost">{formData.fullName}</Code>
@@ -37,7 +37,7 @@ function BookingFormReviewData({
             </DataList.Value>
           </DataList.Item>
           <DataList.Item>
-            <DataList.Label minWidth="88px">Address</DataList.Label>
+            <DataList.Label minWidth="88px">Endereço</DataList.Label>
             <DataList.Value>
               <Flex align="center" gap="2">
                 <Code variant="ghost">{formData.address}</Code>
@@ -45,7 +45,7 @@ function BookingFormReviewData({
             </DataList.Value>
           </DataList.Item>
           <DataList.Item>
-            <DataList.Label minWidth="88px">Health Issue</DataList.Label>
+            <DataList.Label minWidth="88px">Problema de Saúde</DataList.Label>
             <DataList.Value>
               <Flex align="center" gap="2">
                 <Code variant="ghost" color="gray">
@@ -55,7 +55,7 @@ function BookingFormReviewData({
             </DataList.Value>
           </DataList.Item>
           <DataList.Item>
-            <DataList.Label minWidth="88px">Age</DataList.Label>
+            <DataList.Label minWidth="88px">Idade</DataList.Label>
             <DataList.Value>
               <Flex align="center" gap="2">
                 <Code variant="ghost">{formData.age}</Code>
@@ -63,7 +63,7 @@ function BookingFormReviewData({
             </DataList.Value>
           </DataList.Item>
           <DataList.Item>
-            <DataList.Label minWidth="88px">Gender</DataList.Label>
+            <DataList.Label minWidth="88px">Gênero</DataList.Label>
             <DataList.Value>
               <Flex align="center" gap="2">
                 <Code variant="ghost">{formData.gender}</Code>
@@ -72,7 +72,7 @@ function BookingFormReviewData({
           </DataList.Item>
         </DataList.Root>
         <div>
-          <div className="mb-2 font-noto font-semibold">Selected Doctor:</div>
+          <div className="mb-2 font-noto font-semibold">Médico Selecionado:</div>
           <div className="flex justify-between gap-y-1 rounded-md bg-[#f0f0f3] px-4 py-2 font-noto">
             <DataList.Root
               orientation={"horizontal"}
@@ -83,13 +83,13 @@ function BookingFormReviewData({
               }}
             >
               <DataList.Item>
-                <DataList.Label minWidth="88px">Name</DataList.Label>
+                <DataList.Label minWidth="88px">Nome</DataList.Label>
                 <DataList.Value>
                   <Code variant="ghost">{selectedDoctor?.doctor_name}</Code>
                 </DataList.Value>
               </DataList.Item>
               <DataList.Item align="center">
-                <DataList.Label minWidth="88px">Specialization</DataList.Label>
+                <DataList.Label minWidth="88px">Especialização</DataList.Label>
                 <DataList.Value>
                   <Badge color="jade" variant="soft" radius="full">
                     {selectedDoctor?.specialization}
@@ -103,19 +103,19 @@ function BookingFormReviewData({
                 </DataList.Value>
               </DataList.Item>
               <DataList.Item>
-                <DataList.Label minWidth="88px">Mode</DataList.Label>
+                <DataList.Label minWidth="88px">Modalidade</DataList.Label>
                 <DataList.Value>
                   <Code variant="ghost">{selectedDoctor?.mode}</Code>
                 </DataList.Value>
               </DataList.Item>
               <DataList.Item>
-                <DataList.Label minWidth="88px">Available Time</DataList.Label>
+                <DataList.Label minWidth="88px">Horário Disponível</DataList.Label>
                 <DataList.Value>
                   <Code variant="ghost">{selectedDoctor?.selectedSlot?.start_time} - {selectedDoctor?.selectedSlot?.end_time}</Code>
                 </DataList.Value>
               </DataList.Item>
               <DataList.Item>
-                <DataList.Label minWidth="88px">Available Date</DataList.Label>
+                <DataList.Label minWidth="88px">Data Disponível</DataList.Label>
                 <DataList.Value>
                   <Code variant="ghost">{formData?.selectedDate}</Code>
                 </DataList.Value>

@@ -20,7 +20,7 @@ function Home() {
   const { theme, profile } = useCureitContext();
 
   const navigate = useNavigate();
-  const token = localStorage.getItem("sb-vakmfwtcbdeaigysjgch-auth-token");
+  const token = localStorage.getItem("sb-qhxjxhiaadtlcgklvofq-auth-token");
   const userData = token;
   const [userInfo, setUserInfo] = useState({
     id: "",
@@ -356,7 +356,7 @@ function Home() {
               deleteSpeed={20}
               typeSpeed={50}
               delaySpeed={2000}
-              words={["Welcome to CureIt.", "Appointment Booking made easy!"]}
+              words={["Bem-vindo(a) ao CureIt.", "Agendamento de consultas facilitado!"]}
               cursor={true}
             />
           </p>
@@ -369,7 +369,7 @@ function Home() {
                 className="my-4"
                 onClick={() => navigate("/user/dashboard")}
               >
-                Dashboard
+                Painel
               </Button>
             ) : (
               <Button
@@ -379,7 +379,7 @@ function Home() {
                 className="my-4"
                 onClick={() => navigate("/signup")}
               >
-                Sign Up
+                Cadastre-se
               </Button>
             )}
             {profile?.role !== "doctor" && (
@@ -396,7 +396,7 @@ function Home() {
                   }
                 }}
               >
-                Book Appointment
+                Agendar Consulta
               </Button>
             )}
           </div>
@@ -414,7 +414,7 @@ function Home() {
                 }
               }}
             >
-              Free Health Camps
+              Campanhas de Saúde Gratuitas
             </Button>
           </div>
         </div>
@@ -449,7 +449,7 @@ export default Home;
 //   const { theme, profile } = useCureitContext();
 
 //   const navigate = useNavigate();
-//   const token = localStorage.getItem("sb-vakmfwtcbdeaigysjgch-auth-token");
+//   const token = localStorage.getItem("sb-qhxjxhiaadtlcgklvofq-auth-token");
 //   const userData = token;
 //   const [userInfo, setUserInfo] = useState({
 //     id: "",
@@ -502,7 +502,7 @@ export default Home;
 //               deleteSpeed={20}
 //               typeSpeed={50}
 //               delaySpeed={2000}
-//               words={["Welcome to CureIt.", "Appointment Booking made easy!"]}
+//               words={["Bem-vindo(a) ao CureIt.", "Agendamento de consultas facilitado!"]}
 //               cursor={true}
 //             />
 //           </p>
@@ -542,7 +542,7 @@ export default Home;
 //                   }
 //                 }}
 //               >
-//                 Book Appointment
+//                 Agendar Consulta
 //               </Button>
 //             )}
 
@@ -554,7 +554,7 @@ export default Home;
 //               className="my-4"
 //               onClick={() => navigate("/health-camps")}
 //             >
-//               Free Health Camps
+//               Campanhas de Saúde Gratuitas
 //             </Button>
 //           </div>
 //         </div>

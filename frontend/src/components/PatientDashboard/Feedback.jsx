@@ -14,17 +14,17 @@ function Feedback({ data }) {
     const id2 = data.doctorId
     const response = await postFeedback(id, feedbackText, id2);
     // if (response.status !== 200) {
-    //   toast.error("Error sending feedback");
+    //   toast.error("Erro ao enviar avaliação");
     //   setLoading(false);
     //   return;
     // }
-    toast.success("Feedback sent successfully");
+    toast.success("Avaliação enviada com sucesso");
     setLoading(false);
     setFeedbackText("");
   }
   catch(error){
-    // console.log("Error sending feedback", error);
-    toast.error("Error sending feedback");
+    // console.log("Erro ao enviar avaliação", error);
+    toast.error("Erro ao enviar avaliação");
     setLoading(false);
   }
   }
@@ -48,14 +48,14 @@ function Feedback({ data }) {
               minHeight: 150,
             }}
             data-lenis-prevent="true"
-            placeholder="Feedback..."
+            placeholder="Sua avaliação..."
             onChange={(e) => setFeedbackText(e.target.value)}
             value={feedbackText}
           />
 
           <Flex gap="3" mt="4" justify="end">
             <Dialog.Close>
-              <Button color="red">Cancel</Button>
+              <Button color="red">Cancelar</Button>
             </Dialog.Close>
             <Button
               onClick={() => sendFeedback()}

@@ -32,13 +32,13 @@ function EditProfile({ id, profile, setProfile, fetchUserProfile }) {
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const tokenString = localStorage.getItem(
-    "sb-vakmfwtcbdeaigysjgch-auth-token",
+    "sb-qhxjxhiaadtlcgklvofq-auth-token",
   );
   const token = JSON?.parse(tokenString);
   useEffect(() => {
     // // console.log("ggggg", token);
     if (!token) {
-      toast.error("Session Expired Please Login Again.");
+      toast.error("Sessão expirada. Faça login novamente.");
       navigate("/login", { state: { sessionExpiration: true } }); // Redirect to login page
     }
   }, [token]);
@@ -106,7 +106,7 @@ function EditProfile({ id, profile, setProfile, fetchUserProfile }) {
         </Dialog.Trigger>
 
         <Dialog.Content maxWidth="450px">
-          <Dialog.Title>Edit your profile details</Dialog.Title>
+          <Dialog.Title>Editar detalhes do perfil</Dialog.Title>
           <Dialog.Description size="2" mb="4">
             Make changes to your profile.
           </Dialog.Description>
@@ -118,7 +118,7 @@ function EditProfile({ id, profile, setProfile, fetchUserProfile }) {
               </Text>
               <TextField.Root
                 value={editedProfile.name}
-                placeholder="Enter your full name"
+                placeholder="Digite seu nome completo"
                 onChange={(e) =>
                   setEditedProfile({ ...editedProfile, name: e.target.value })
                 }
@@ -130,7 +130,7 @@ function EditProfile({ id, profile, setProfile, fetchUserProfile }) {
               </Text>
               <TextField.Root
                 value={email}
-                placeholder="Enter your email"
+                placeholder="Digite seu e-mail"
                 onChange={(e) =>
                   setEditedProfile({ ...editedProfile, email: e.target.value })
                 }
@@ -142,7 +142,7 @@ function EditProfile({ id, profile, setProfile, fetchUserProfile }) {
               </Text>
               <TextField.Root
                 value={address}
-                placeholder="Enter your address"
+                placeholder="Digite seu endereço"
                 onChange={(e) =>
                   setEditedProfile({
                     ...editedProfile,
@@ -158,7 +158,7 @@ function EditProfile({ id, profile, setProfile, fetchUserProfile }) {
                 </Text>
                 <TextField.Root
                   value={age}
-                  placeholder="Enter your age"
+                  placeholder="Digite sua idade"
                   type="number"
                   pattern="[0-9]*"
                   onChange={(e) =>
