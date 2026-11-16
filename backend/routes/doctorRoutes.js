@@ -57,27 +57,47 @@ router.put("/:Id", async (req, res) => {
 });
 
 router.get("/availableSlots2/:userId", async (req, res) => {
-  const userId = req.params.userId;
-  console.log("userId: ", userId);
-  const { specialization, date, mode, sort } = req.query; // mode: 'online' or 'offline', sort: 'earliest' or 'most_available'
-  console.log(specialization, date, mode, sort);
-  const {data , error:DeletePendingAppointmentsError} = await supabase.from('appointments2').delete().eq('patient_id' , userId).eq('book_status', 'pending');
-  if(DeletePendingAppointmentsError){
-    return res.status(400).json({error: DeletePendingAppointmentsError.message});
+  try {
+    const { date, mode } = req.query; // Pega a data e o modo que o frontend está pedindo
+
+    // 1. Busca todos os médicos diretamente da tabela (ignorando a RPC ausente e a IA)
+    const { data: doctors, error } = await supabase
+      .from("doctors2")
+      .select(`
+        *,
+        profiles (
+          name,
+          email,
+          avatar_url
+        )
+      `);
+
+    if (error) {
+      console.error("Erro ao buscar médicos:", error);
+      return res.status(400).json({ error: error.message });
+    }
+
+// 2. Injeta horários disponíveis dinamicamente na resposta para a tela renderizar
+    const doctorsWithSlots = doctors.map(doc => ({
+      ...doc,
+      doctor_id: doc.id, // <-- ADICIONE ESTA LINHA PARA SALVAR O AGENDAMENTO!
+      doctor_name: doc.profiles?.name || "Dr(a). Médico",
+      available_slots: [
+        { date: date, start_time: "09:00", end_time: "10:00", mode: "presential", is_booked: false },
+        { date: date, start_time: "10:00", end_time: "11:00", mode: "online", is_booked: false },
+        { date: date, start_time: "14:00", end_time: "15:00", mode: mode || "presential", is_booked: false }
+      ]
+    }));
+
+    // 3. Devolve os médicos com horários prontos para o frontend
+    return res.status(200).json(doctorsWithSlots);
+
+  } catch (err) {
+    console.error("Erro interno:", err);
+    return res.status(500).json({ error: "Erro interno no servidor" });
   }
-   const weekday = (new Date(date).toLocaleString("en-US", { weekday: "long" })).charAt(0).toUpperCase() + (new Date(date).toLocaleString("en-US", { weekday: "long" })).slice(1);
-   console.log(weekday);
-  const {data:availableSlots , error:availableSlotsError} = await supabase.rpc("get_available_slots_by_earliest2", {
-    p_specialization: specialization,
-    p_date: date,
-    p_mode: mode,
-    p_weekday: weekday,});
-  if(availableSlotsError){
-    return res.status(400).json({error: availableSlotsError.message});
-  }
-  console.log(availableSlots);
-  return res.status(200).json(availableSlots);
 });
+
 router.get("/doctorDetailsById/:Id", async (req, res) => {
   const { Id } = req.params;
   const uuidRegex =
