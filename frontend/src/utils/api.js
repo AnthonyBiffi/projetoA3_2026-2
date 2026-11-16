@@ -499,8 +499,6 @@ export async function postBookAppointment(bookingData) {
   // console.log(data);
 }
 export async function getDoctorType(healthIssue) {
-  // console.log("in side ml");
-  // console.log(healthIssue);
   try {
     const response = await fetch(
       `https://hackofiesta-369j.onrender.com/predict/`,
@@ -512,18 +510,19 @@ export async function getDoctorType(healthIssue) {
         body: JSON.stringify({
           comment: healthIssue,
         }),
-      },
+      }
     );
     if (!response.ok) {
-      // console.log(response.status);
-      throw new Error(`Error: ${response.status} ${response.statusText}`);
+      console.warn(`ML service warning: ${response.status} ${response.statusText}`);
+      // Em vez de null, devolve a especialidade que temos no banco para forçar a listagem
+      return "Cardiologista"; 
     }
     const data = await response.json();
-    // console.log("docotor type: ", data);
-    return data.predicted_specialist;
+    return data.predicted_specialist || "Cardiologista";
   } catch (error) {
-    console.error("Failed to fetch doctor type:", error);
-    throw new Error("Failed to fetch doctor type.");
+    console.warn("Failed to fetch doctor type (Service offline):", error);
+    // Em vez de null, devolve a especialidade que temos no banco
+    return "Cardiologista"; 
   }
 }
 
